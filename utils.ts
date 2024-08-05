@@ -36,6 +36,15 @@ export function createHyperSubLayer(
           optional: ["any"],
         },
       },
+      to_if_alone: [{
+        key_code: sublayer_key,
+        modifiers: [
+          "left_shift",
+          "left_command",
+          "left_control",
+          "left_option",
+        ],
+      }],
       to_after_key_up: [
         {
           set_variable: {
@@ -45,6 +54,12 @@ export function createHyperSubLayer(
             value: 0,
           },
         },
+        // {
+        //   set_variable: {
+        //     name: `${subLayerVariableName}_used`,
+        //     value: 0,
+        //   }
+        // },
       ],
       to: [
         {
@@ -85,6 +100,14 @@ export function createHyperSubLayer(
             optional: ["any"],
           },
         },
+        // to_after_key_up: [
+        //   {
+        //     set_variable: {
+        //       name: `${subLayerVariableName}_used`,
+        //       value: 1,
+        //     }
+        //   },
+        // ],
         // Only trigger this command if the variable is 1 (i.e., if Hyper + sublayer is held)
         conditions: [
           {
@@ -108,45 +131,57 @@ export function createHyperSubLayers(subLayers: {
 }): KarabinerRules[] {
   const allSubLayerVariables = (
     Object.keys(subLayers) as (keyof typeof subLayers)[]
-  ).map((sublayer_key) => generateSubLayerVariableName(sublayer_key));
+  )
+  .filter(sublayer_key => {
+    if (typeof subLayers[sublayer_key] === "undefined") {
+      return false;
+    } else if (typeof subLayers[sublayer_key] === "string") {
+      return false;
+    } else if (Object.keys(subLayers[sublayer_key]).filter(k => k != "to").length == 0) {
+      return false;
+    }
+    return true;
+  })
+  .map((sublayer_key) => generateSubLayerVariableName(sublayer_key));
+
 
   return Object.entries(subLayers).map(([key, value]) =>
     "to" in value
       ? {
-          description: `Hyper Key + ${key}`,
-          manipulators: [
-            {
-              ...value,
-              type: "basic" as const,
-              from: {
-                key_code: key as KeyCode,
-                modifiers: {
-                  optional: ["any"],
-                },
+        description: `Hyper Key + ${key}`,
+        manipulators: [
+          {
+            ...value,
+            type: "basic" as const,
+            from: {
+              key_code: key as KeyCode,
+              modifiers: {
+                optional: ["any"],
               },
-              conditions: [
-                {
-                  type: "variable_if",
-                  name: "hyper",
-                  value: 1,
-                },
-                ...allSubLayerVariables.map((subLayerVariable) => ({
-                  type: "variable_if" as const,
-                  name: subLayerVariable,
-                  value: 0,
-                })),
-              ],
             },
-          ],
-        }
+            conditions: [
+              {
+                type: "variable_if",
+                name: "hyper",
+                value: 1,
+              },
+              ...allSubLayerVariables.map((subLayerVariable) => ({
+                type: "variable_if" as const,
+                name: subLayerVariable,
+                value: 0,
+              })),
+            ],
+          },
+        ],
+      }
       : {
-          description: `Hyper Key sublayer "${key}"`,
-          manipulators: createHyperSubLayer(
-            key as KeyCode,
-            value,
-            allSubLayerVariables
-          ),
-        }
+        description: `Hyper Key sublayer "${key}"`,
+        manipulators: createHyperSubLayer(
+          key as KeyCode,
+          value,
+          allSubLayerVariables
+        ),
+      }
   );
 }
 
@@ -191,6 +226,19 @@ export function shell(
   };
 }
 
+export function shell_command(commands: string[]) {
+  return {
+    to: commands.map((command) => ({
+      shell_command: command.trim(),
+    })),
+    description: commands.join(" && "),
+  };
+}
+
+export function switch_karabiner_profile(name: string) {
+  return shell_command([`'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile '${name}' && osascript -e 'display notification "${name}" with title "Switched karabiner profile"'`]);
+}
+
 /**
  * Shortcut for managing window sizing with Rectangle
  */
@@ -211,3 +259,135 @@ export function rectangle(name: string): LayerCommand {
 export function app(name: string): LayerCommand {
   return open(`-a '${name}.app'`);
 }
+
+
+
+
+
+export const basicRemap = (key_code: KeyCode, modifiers?: string[]): LayerCommand => {
+  if (typeof modifiers !== "undefined") {
+    return {
+      to: [{
+        key_code: key_code,
+        modifiers: modifiers,
+      }]
+    };
+  } else {
+    return {
+      to: [{
+        key_code: key_code,
+      }]
+    };
+  }
+}
+
+export const standardHyperkey = (key_code) => {
+  return {
+    to: [{
+      key_code: key_code,
+      modifiers: [
+        "left_shift",
+        "left_command",
+        "left_control",
+        "left_option",
+      ],
+    }]
+  }
+}
+
+const fallbacks = {};
+[
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '0',
+  'hyphen',
+  'q',
+  'w',
+  'e',
+  'r',
+  't',
+  'y',
+  'u',
+  'i',
+  'o',
+  'p',
+  'a',
+  's',
+  'd',
+  'f',
+  'h',
+  'g',
+  'j',
+  'k',
+  'l',
+  'z',
+  'x',
+  'c',
+  'v',
+  'b',
+  'n',
+  'm',
+  'f1',
+  'f2',
+  'f3',
+  'f4',
+  'f5',
+  'f6',
+  'f7',
+  'f8',
+  'f9',
+  'f10',
+  'f11',
+  'f12',
+  'f13',
+  'f14',
+  'f15',
+  'f16',
+  'f17',
+  'f18',
+  'f19',
+  'f20',
+  'f21',
+  'f22',
+  'f23',
+  'f24',
+  'left_arrow',
+  'up_arrow',
+  'right_arrow',
+  'down_arrow',
+  'home',
+  'end',
+  'page_up',
+  'page_down',
+
+  'return_or_enter',
+  'escape',
+  'delete_or_backspace',
+  'delete_forward',
+  'tab',
+  'spacebar',
+  'hyphen',
+  'equal_sign',
+  'open_bracket',
+  'close_bracket',
+  'backslash',
+  'non_us_pound',
+  'semicolon',
+  'quote',
+  'grave_accent_and_tilde',
+  'comma',
+  'period',
+  'slash',
+  'non_us_backslash',
+].forEach(key_code => {
+  fallbacks[key_code] = standardHyperkey(key_code)
+});
+
+export { fallbacks };

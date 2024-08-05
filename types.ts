@@ -1,5 +1,6 @@
 export interface KarabinerRules {
   description?: string;
+  parameters?: object;
   manipulators?: Manipulator[];
 }
 
@@ -16,6 +17,7 @@ export interface Manipulator {
 
 export interface Parameters {
   "basic.simultaneous_threshold_milliseconds"?: number;
+  "basic.to_if_alone_timeout_milliseconds"?: number;
 }
 
 type Conditions =
@@ -108,6 +110,7 @@ export interface Modifiers {
 export interface To {
   key_code?: KeyCode;
   modifiers?: string[];
+  repeat?: Boolean;
   shell_command?: string;
   set_variable?: {
     name: string;
