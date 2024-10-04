@@ -2,7 +2,7 @@
 
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle, basicRemap, fallbacks, switch_karabiner_profile } from "./utils";
+import { createHyperSubLayers, app, open, rectangle, basicRemap, fallbacks, switch_karabiner_profile, app_with_notification, shortcut } from "./utils";
 
 const name_of_default_fn = "Caps -> Hyper";
 const name_of_builtin_fn = "Caps -> Hyper (Fn keys are mac builtins)";
@@ -50,9 +50,9 @@ const rules: KarabinerRules[] = [
             },
           },
         ],
-        to_if_alone: [{
-          "key_code": "escape",
-        }],
+        // to_if_alone: [{
+        //   "key_code": "escape",
+        // }],
         "parameters": {
           "basic.to_if_alone_timeout_milliseconds": 500
         },
@@ -116,8 +116,8 @@ const rules: KarabinerRules[] = [
   ...createHyperSubLayers({
     ...fallbacks,
 
-    page_up: switch_karabiner_profile(name_of_default_fn),
-    page_down: switch_karabiner_profile(name_of_builtin_fn),
+    page_up: switch_karabiner_profile(name_of_default_fn, "Fn keys"),
+    page_down: switch_karabiner_profile(name_of_builtin_fn, "Media keys"),
 
     j: {
       to: [{
@@ -190,6 +190,12 @@ const rules: KarabinerRules[] = [
       }]
     },
 
+    // a = "A"udio/video
+    a: {
+      // s = Stop everything
+      s: open("-g raycast://script-commands/mute-and-cut-video"),
+    },
+
     c: open("raycast://extensions/raycast/clipboard-history/clipboard-history"),
 
     // D = digits. Numeric keys for right hand, moved down a notch from the numeric row for easier reach.
@@ -212,14 +218,19 @@ const rules: KarabinerRules[] = [
       9: basicRemap("keypad_slash"),
       h: basicRemap("comma"),
       y: basicRemap("period"),
+      n: basicRemap("period"),
     },
 
     // All window-commands
     w: {
-      y: rectangle('bottom-left'),
-      u: rectangle('top-left'),
-      i: rectangle('top-right'),
-      o: rectangle('bottom-right'),
+      u: rectangle('bottom-left'),
+      i: rectangle('top-left'),
+      o: rectangle('top-right'),
+      p: rectangle('bottom-right'),
+    //   y: rectangle('bottom-left'),
+    //   u: rectangle('top-left'),
+    //   i: rectangle('top-right'),
+    //   o: rectangle('bottom-right'),
       r: rectangle('restore'),
       c: rectangle('center'),
 
@@ -244,11 +255,24 @@ const rules: KarabinerRules[] = [
       g: open("-g raycast://extensions/raycast/window-management/top-center-two-thirds"),
     },
 
+    e: {
+      u: open("-g raycast://extensions/raycast/window-management/center && open -g raycast://extensions/raycast/window-management/move-left"),
+      i: open("-g raycast://extensions/raycast/window-management/center && open -g raycast://extensions/raycast/window-management/move-up"),
+      o: open("-g raycast://extensions/raycast/window-management/center && open -g raycast://extensions/raycast/window-management/move-down"),
+      p: open("-g raycast://extensions/raycast/window-management/center && open -g raycast://extensions/raycast/window-management/move-right"),
+      j: open("-g raycast://extensions/raycast/window-management/move-left"),
+      k: open("-g raycast://extensions/raycast/window-management/move-up"),
+      l: open("-g raycast://extensions/raycast/window-management/move-down"),
+      semicolon: open("-g raycast://extensions/raycast/window-management/move-right"),
+    },
+
     // o = "Open" applications
     o: {
-      // v: app("Visual Studio Code"),
+      c: app("Visual Studio Code"),
       v: open("raycast://extensions/thomas/visual-studio-code/index"),
-      e: app("Microsoft Edge"),
+      e: app_with_notification("Microsoft Edge"),
+	  // n = "N"ew edge window
+      n: open("raycast://script-commands/new-edge-window"),
       g: app("Opera GX"),
       t: app("iTerm"),
       i: app("iTerm"),
@@ -256,7 +280,8 @@ const rules: KarabinerRules[] = [
       f: app("Finder"),
       // b = "Beskeder"
       b: app("Messages"),
-      m: app("Mattermost"),
+      p: app_with_notification("Mail"),
+      m: app_with_notification("Mattermost"),
     },
 
     // f1: app("Mail"),
@@ -268,9 +293,9 @@ const rules: KarabinerRules[] = [
     // s = "System"
     s: {
       // f = "Fn"
-      f: switch_karabiner_profile(name_of_default_fn),
+      f: switch_karabiner_profile(name_of_default_fn, "Fn keys"),
       // b = "Builtins"
-      b: switch_karabiner_profile(name_of_builtin_fn),
+      b: switch_karabiner_profile(name_of_builtin_fn, "Media keys"),
       //   u: {
       //     to: [
       //       {
@@ -322,6 +347,9 @@ const rules: KarabinerRules[] = [
       d: open(
         `raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`
       ),
+	//   o: shortcut("f17", ["cmd", "control", "shift", "alt"]),
+	//   l: basicRemap("f17", ["left_command", "left_control", "left_shift", "left_alt"]),
+	//   o: basicRemap("f18", ["left_command", "left_control", "left_shift", "left_alt"]),
       //   // "T"heme
       //   t: open(`raycast://extensions/raycast/system/toggle-system-appearance`),
     },
@@ -367,6 +395,15 @@ const rules: KarabinerRules[] = [
       c: open("raycast://extensions/raycast/system/open-camera"),
       n: open("-g raycast://extensions/raycast/floating-notes/toggle-floating-notes-window"),
       m: open("-g raycast://extensions/raycast/floating-notes/toggle-floating-notes-focus"),
+	},
+	// u = Ur
+	u: {
+	  // r = "R"estart stopwatch
+	  r: open("-g raycast://script-commands/genstart-stopur"),
+	  // s = Start stopwatch
+      s: open("-g raycast://script-commands/start-stopur"),
+	  // e = End stopwatch
+      spacebar: open("-g raycast://script-commands/stop-stopur"),
     },
     q: {
       j: basicRemap("1", ["left_control"]),
@@ -933,128 +970,6 @@ const basic_params = {
       "treat_as_built_in_keyboard": false
     }
   ],
-  "fn_function_keys": [
-    {
-      "from": {
-        "key_code": "f1"
-      },
-      "to": [
-        {
-          "consumer_key_code": "display_brightness_decrement"
-        }
-      ]
-    },
-    {
-      "from": {
-        "key_code": "f2"
-      },
-      "to": [
-        {
-          "consumer_key_code": "display_brightness_increment"
-        }
-      ]
-    },
-    {
-      "from": {
-        "key_code": "f3"
-      },
-      "to": [
-        {
-          "apple_vendor_keyboard_key_code": "mission_control"
-        }
-      ]
-    },
-    {
-      "from": {
-        "key_code": "f4"
-      },
-      "to": [
-        {
-          "key_code": "f4"
-        }
-      ]
-    },
-    {
-      "from": {
-        "key_code": "f5"
-      },
-      "to": [
-        {
-          "apple_vendor_top_case_key_code": "illumination_down"
-        }
-      ]
-    },
-    {
-      "from": {
-        "key_code": "f6"
-      },
-      "to": [
-        {
-          "apple_vendor_top_case_key_code": "illumination_up"
-        }
-      ]
-    },
-    {
-      "from": {
-        "key_code": "f7"
-      },
-      "to": [
-        {
-          "consumer_key_code": "rewind"
-        }
-      ]
-    },
-    {
-      "from": {
-        "key_code": "f8"
-      },
-      "to": [
-        {
-          "consumer_key_code": "play_or_pause"
-        }
-      ]
-    },
-    {
-      "from": {
-        "key_code": "f9"
-      },
-      "to": [
-        {
-          "consumer_key_code": "fast_forward"
-        }
-      ]
-    },
-    {
-      "from": {
-        "key_code": "f10"
-      },
-      "to": [
-        {
-          "consumer_key_code": "mute"
-        }
-      ]
-    },
-    {
-      "from": {
-        "key_code": "f11"
-      },
-      "to": [
-        {
-          "consumer_key_code": "volume_decrement"
-        }
-      ]
-    },
-    {
-      "from": {
-        "key_code": "f12"
-      },
-      "to": [
-        {
-          "consumer_key_code": "volume_increment"
-        }
-      ]
-    }
-  ],
   "parameters": {
     "delay_milliseconds_before_open_device": 1000
   },
@@ -1111,7 +1026,206 @@ fs.writeFileSync(
               "basic.to_if_held_down_threshold_milliseconds": 500,
               "mouse_motion_to_scroll.speed": 100
             },
-            rules,
+            rules: [
+              {
+                description: "Fn reversal",
+                manipulators: [
+                  {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "f1",
+                      "modifiers": {
+                        "mandatory": [
+                          "fn",
+                        ],
+                      }
+                    },
+                    "to": [
+                      {
+                        "consumer_key_code": "display_brightness_decrement"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "f2",
+                      "modifiers": {
+                        "mandatory": [
+                          "fn",
+                        ],
+                      }
+                    },
+                    "to": [
+                      {
+                        "consumer_key_code": "display_brightness_increment"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "f3",
+                      "modifiers": {
+                        "mandatory": [
+                          "fn",
+                        ],
+                      }
+                    },
+                    "to": [
+                      {
+                        "apple_vendor_keyboard_key_code": "mission_control"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "f4",
+                      "modifiers": {
+                        "mandatory": [
+                          "fn",
+                        ],
+                      }
+                    },
+                    "to": [
+                      {
+                        "key_code": "f4"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "f5",
+                      "modifiers": {
+                        "mandatory": [
+                          "fn",
+                        ],
+                      }
+                    },
+                    "to": [
+                      {
+                        "apple_vendor_top_case_key_code": "illumination_down"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "f6",
+                      "modifiers": {
+                        "mandatory": [
+                          "fn",
+                        ],
+                      }
+                    },
+                    "to": [
+                      {
+                        "apple_vendor_top_case_key_code": "illumination_up"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "f7",
+                      "modifiers": {
+                        "mandatory": [
+                          "fn",
+                        ],
+                      }
+                    },
+                    "to": [
+                      {
+                        "consumer_key_code": "rewind"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "f8",
+                      "modifiers": {
+                        "mandatory": [
+                          "fn",
+                        ],
+                      }
+                    },
+                    "to": [
+                      {
+                        "consumer_key_code": "play_or_pause"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "f9",
+                      "modifiers": {
+                        "mandatory": [
+                          "fn",
+                        ],
+                      }
+                    },
+                    "to": [
+                      {
+                        "consumer_key_code": "fast_forward"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "f10",
+                      "modifiers": {
+                        "mandatory": [
+                          "fn",
+                        ],
+                      }
+                    },
+                    "to": [
+                      {
+                        "consumer_key_code": "mute"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "f11",
+                      "modifiers": {
+                        "mandatory": [
+                          "fn",
+                        ],
+                      }
+                    },
+                    "to": [
+                      {
+                        "consumer_key_code": "volume_decrement"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "basic",
+                    "from": {
+                      "key_code": "f12",
+                      "modifiers": {
+                        "mandatory": [
+                          "fn",
+                        ],
+                      }
+                    },
+                    "to": [
+                      {
+                        "consumer_key_code": "volume_increment"
+                      }
+                    ]
+                  },
+                ],
+              },
+              ...rules
+            ],
           },
           "selected": true,
           ...basic_params,

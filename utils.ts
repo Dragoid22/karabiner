@@ -235,8 +235,96 @@ export function shell_command(commands: string[]) {
   };
 }
 
-export function switch_karabiner_profile(name: string) {
-  return shell_command([`'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile '${name}' && osascript -e 'display notification "${name}" with title "Switched karabiner profile"'`]);
+export function shortcut(key: string, modifiers: string[]) {
+	let mods = [] as string[];
+	if (modifiers.includes("cmd") || modifiers.includes("command")) {
+		mods.push(`command down`);
+	}
+	if (modifiers.includes("control") || modifiers.includes("ctrl")) {
+		mods.push(`control down`);
+	}
+	if (modifiers.includes("alt") || modifiers.includes("option")) {
+		mods.push(`option down`);
+	}
+	if (modifiers.includes("shift")) {
+		mods.push(`shift down`);
+	}
+	let modstring = "";
+	if (mods.length) {
+		modstring = ` using {${mods.join(", ")}}`;
+	}
+
+	let keystroke = `keystroke "${key}"`;
+	if (key == "f1") {
+		keystroke = " key code 122";
+	}
+	if (key == "f2") {
+		keystroke = " key code 120";
+	}
+	if (key == "f3") {
+		keystroke = " key code 99";
+	}
+	if (key == "f4") {
+		keystroke = " key code 118";
+	}
+	if (key == "f5") {
+		keystroke = " key code 96";
+	}
+	if (key == "f6") {
+		keystroke = " key code 97";
+	}
+	if (key == "f7") {
+		keystroke = " key code 98";
+	}
+	if (key == "f8") {
+		keystroke = " key code 100";
+	}
+	if (key == "f9") {
+		keystroke = " key code 101";
+	}
+	if (key == "f10") {
+		keystroke = " key code 109";
+	}
+	if (key == "f11") {
+		keystroke = " key code 103";
+	}
+	if (key == "f12") {
+		keystroke = " key code 111";
+	}
+
+	if (key == "f13") {
+		keystroke = " key code 105";
+	}
+	if (key == "f14") {
+		keystroke = " key code 107";
+	}
+	if (key == "f15") {
+		keystroke = " key code 113";
+	}
+	if (key == "f16") {
+		keystroke = " key code 106";
+	}
+	if (key == "f17") {
+		keystroke = " key code 64";
+	}
+	if (key == "f18") {
+		keystroke = " key code 79";
+	}
+	if (key == "f19") {
+		keystroke = " key code 80";
+	}
+	if (key == "f20") {
+		keystroke = " key code 90";
+	}
+
+
+	return shell_command([`osascript -e 'tell application "System Events" to ${keystroke}${modstring}'`]);
+}
+
+export function switch_karabiner_profile(name: string, message?: string) {
+  message = message || `Switched karabiner profile: ${name}`;
+  return shell_command([`'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile '${name}' && ${raycast_notification_command(message)}`]);
+//   return shell_command([`'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile '${name}' && osascript -e 'display notification "${name}" with title "Switched karabiner profile"'`]);
 }
 
 /**
@@ -260,6 +348,23 @@ export function app(name: string): LayerCommand {
   return open(`-a '${name}.app'`);
 }
 
+export function app_with_notification(appname: string): LayerCommand {
+  let grep_regex = `[${appname.substring(0,1)}]${appname.substring(1)}$`;
+  let check_command = `ps axo pid,command | grep '${grep_regex}'`;
+  
+  let notification_command = raycast_notification_command(`Opening ${appname}`); // `open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=${encodeURIComponent(JSON.stringify({title: `Opening ${appname}`, type: "success"}))}'`;
+
+  return {
+		to: [{
+		  shell_command: `(${check_command} || ${notification_command}) && open -a '${appname}'`,
+		}],
+		description: `Open ${appname}`,
+  };
+}
+
+export function raycast_notification_command(notification_text: string) {
+	return `open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=${encodeURIComponent(JSON.stringify({title: notification_text, type: "success"}))}'`;
+}
 
 
 
