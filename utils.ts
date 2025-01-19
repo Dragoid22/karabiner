@@ -236,89 +236,89 @@ export function shell_command(commands: string[]) {
 }
 
 export function shortcut(key: string, modifiers: string[]) {
-	let mods = [] as string[];
-	if (modifiers.includes("cmd") || modifiers.includes("command")) {
-		mods.push(`command down`);
-	}
-	if (modifiers.includes("control") || modifiers.includes("ctrl")) {
-		mods.push(`control down`);
-	}
-	if (modifiers.includes("alt") || modifiers.includes("option")) {
-		mods.push(`option down`);
-	}
-	if (modifiers.includes("shift")) {
-		mods.push(`shift down`);
-	}
-	let modstring = "";
-	if (mods.length) {
-		modstring = ` using {${mods.join(", ")}}`;
-	}
+    let mods = [] as string[];
+    if (modifiers.includes("cmd") || modifiers.includes("command")) {
+        mods.push(`command down`);
+    }
+    if (modifiers.includes("control") || modifiers.includes("ctrl")) {
+        mods.push(`control down`);
+    }
+    if (modifiers.includes("alt") || modifiers.includes("option")) {
+        mods.push(`option down`);
+    }
+    if (modifiers.includes("shift")) {
+        mods.push(`shift down`);
+    }
+    let modstring = "";
+    if (mods.length) {
+        modstring = ` using {${mods.join(", ")}}`;
+    }
 
-	let keystroke = `keystroke "${key}"`;
-	if (key == "f1") {
-		keystroke = " key code 122";
-	}
-	if (key == "f2") {
-		keystroke = " key code 120";
-	}
-	if (key == "f3") {
-		keystroke = " key code 99";
-	}
-	if (key == "f4") {
-		keystroke = " key code 118";
-	}
-	if (key == "f5") {
-		keystroke = " key code 96";
-	}
-	if (key == "f6") {
-		keystroke = " key code 97";
-	}
-	if (key == "f7") {
-		keystroke = " key code 98";
-	}
-	if (key == "f8") {
-		keystroke = " key code 100";
-	}
-	if (key == "f9") {
-		keystroke = " key code 101";
-	}
-	if (key == "f10") {
-		keystroke = " key code 109";
-	}
-	if (key == "f11") {
-		keystroke = " key code 103";
-	}
-	if (key == "f12") {
-		keystroke = " key code 111";
-	}
+    let keystroke = `keystroke "${key}"`;
+    if (key == "f1") {
+        keystroke = " key code 122";
+    }
+    if (key == "f2") {
+        keystroke = " key code 120";
+    }
+    if (key == "f3") {
+        keystroke = " key code 99";
+    }
+    if (key == "f4") {
+        keystroke = " key code 118";
+    }
+    if (key == "f5") {
+        keystroke = " key code 96";
+    }
+    if (key == "f6") {
+        keystroke = " key code 97";
+    }
+    if (key == "f7") {
+        keystroke = " key code 98";
+    }
+    if (key == "f8") {
+        keystroke = " key code 100";
+    }
+    if (key == "f9") {
+        keystroke = " key code 101";
+    }
+    if (key == "f10") {
+        keystroke = " key code 109";
+    }
+    if (key == "f11") {
+        keystroke = " key code 103";
+    }
+    if (key == "f12") {
+        keystroke = " key code 111";
+    }
 
-	if (key == "f13") {
-		keystroke = " key code 105";
-	}
-	if (key == "f14") {
-		keystroke = " key code 107";
-	}
-	if (key == "f15") {
-		keystroke = " key code 113";
-	}
-	if (key == "f16") {
-		keystroke = " key code 106";
-	}
-	if (key == "f17") {
-		keystroke = " key code 64";
-	}
-	if (key == "f18") {
-		keystroke = " key code 79";
-	}
-	if (key == "f19") {
-		keystroke = " key code 80";
-	}
-	if (key == "f20") {
-		keystroke = " key code 90";
-	}
+    if (key == "f13") {
+        keystroke = " key code 105";
+    }
+    if (key == "f14") {
+        keystroke = " key code 107";
+    }
+    if (key == "f15") {
+        keystroke = " key code 113";
+    }
+    if (key == "f16") {
+        keystroke = " key code 106";
+    }
+    if (key == "f17") {
+        keystroke = " key code 64";
+    }
+    if (key == "f18") {
+        keystroke = " key code 79";
+    }
+    if (key == "f19") {
+        keystroke = " key code 80";
+    }
+    if (key == "f20") {
+        keystroke = " key code 90";
+    }
 
 
-	return shell_command([`osascript -e 'tell application "System Events" to ${keystroke}${modstring}'`]);
+    return shell_command([`osascript -e 'tell application "System Events" to ${keystroke}${modstring}'`]);
 }
 
 export function switch_karabiner_profile(name: string, message?: string) {
@@ -349,21 +349,22 @@ export function app(name: string): LayerCommand {
 }
 
 export function app_with_notification(appname: string): LayerCommand {
-  let grep_regex = `[${appname.substring(0,1)}]${appname.substring(1)}$`;
-  let check_command = `ps axo pid,command | grep '${grep_regex}'`;
+//   let grep_regex = `[${appname.substring(0,1)}]${appname.substring(1)}$`;
+//   let check_command = `ps axo pid,command | grep '${grep_regex}'`;
+  let check_command = `pgrep -f '${appname}' > /dev/null`;
   
   let notification_command = raycast_notification_command(`Opening ${appname}`); // `open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=${encodeURIComponent(JSON.stringify({title: `Opening ${appname}`, type: "success"}))}'`;
 
   return {
-		to: [{
-		  shell_command: `(${check_command} || ${notification_command}) && open -a '${appname}'`,
-		}],
-		description: `Open ${appname}`,
+        to: [{
+          shell_command: `(${check_command} || ${notification_command}) && open -a '${appname}'`,
+        }],
+        description: `Open ${appname}`,
   };
 }
 
 export function raycast_notification_command(notification_text: string) {
-	return `open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=${encodeURIComponent(JSON.stringify({title: notification_text, type: "success"}))}'`;
+    return `open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=${encodeURIComponent(JSON.stringify({title: notification_text, type: "success"}))}'`;
 }
 
 
@@ -496,3 +497,664 @@ const fallbacks = {};
 });
 
 export { fallbacks };
+
+
+export const fn_function_keys = {
+  "description": "Fn keys are normal function keys",
+  "manipulators": [
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f1",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "consumer_key_code": "display_brightness_decrement"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f1",
+      },
+      "to": [
+        {
+          "key_code": "f1",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f2",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "consumer_key_code": "display_brightness_increment"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f2",
+      },
+      "to": [
+        {
+          "key_code": "f2",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f3",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "apple_vendor_keyboard_key_code": "mission_control"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f3",
+      },
+      "to": [
+        {
+          "key_code": "f3",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f4",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f4"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f4",
+      },
+      "to": [
+        {
+          "key_code": "f4",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f5",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "apple_vendor_top_case_key_code": "illumination_down"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f5",
+      },
+      "to": [
+        {
+          "key_code": "f5",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f6",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "apple_vendor_top_case_key_code": "illumination_up"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f6",
+      },
+      "to": [
+        {
+          "key_code": "f6",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f7",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "consumer_key_code": "rewind"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f7",
+      },
+      "to": [
+        {
+          "key_code": "f7",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f8",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "consumer_key_code": "play_or_pause"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f8",
+      },
+      "to": [
+        {
+          "key_code": "f8",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f9",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "consumer_key_code": "fast_forward"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f9",
+      },
+      "to": [
+        {
+          "key_code": "f9",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f10",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "consumer_key_code": "mute"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f10",
+      },
+      "to": [
+        {
+          "key_code": "f10",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f11",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "consumer_key_code": "volume_decrement"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f11",
+      },
+      "to": [
+        {
+          "key_code": "f11",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f12",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "consumer_key_code": "volume_increment"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f12",
+      },
+      "to": [
+        {
+          "key_code": "f12",
+        }
+      ]
+    },
+  ]
+};
+
+export const fn_media_keys = {
+  "description": "Fn keys are normal function keys",
+  "manipulators": [
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f1",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f1",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f1",
+      },
+      "to": [
+        {
+          "consumer_key_code": "display_brightness_decrement"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f2",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f2",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f2",
+      },
+      "to": [
+        {
+          "consumer_key_code": "display_brightness_increment"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f3",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f3",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f3",
+      },
+      "to": [
+        {
+          "apple_vendor_keyboard_key_code": "mission_control"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f4",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f4",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f4",
+      },
+      "to": [
+        {
+          "key_code": "f4"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f5",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f5",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f5",
+      },
+      "to": [
+        {
+          "apple_vendor_top_case_key_code": "illumination_down"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f6",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f6",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f6",
+      },
+      "to": [
+        {
+          "apple_vendor_top_case_key_code": "illumination_up"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f7",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f7",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f7",
+      },
+      "to": [
+        {
+          "consumer_key_code": "rewind"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f8",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f8",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f8",
+      },
+      "to": [
+        {
+          "consumer_key_code": "play_or_pause"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f9",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f9",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f9",
+      },
+      "to": [
+        {
+          "consumer_key_code": "fast_forward"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f10",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f10",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f10",
+      },
+      "to": [
+        {
+          "consumer_key_code": "mute"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f11",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f11",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f11",
+      },
+      "to": [
+        {
+          "consumer_key_code": "volume_decrement"
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f12",
+        "modifiers": {
+          "mandatory": [
+            "fn",
+          ],
+        }
+      },
+      "to": [
+        {
+          "key_code": "f12",
+        }
+      ]
+    },
+    {
+      "type": "basic",
+      "from": {
+        "key_code": "f12",
+      },
+      "to": [
+        {
+          "consumer_key_code": "volume_increment"
+        }
+      ]
+    },
+  ]
+};

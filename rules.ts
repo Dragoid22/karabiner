@@ -2,11 +2,15 @@
 
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle, basicRemap, fallbacks, switch_karabiner_profile, app_with_notification, shortcut } from "./utils";
+import { createHyperSubLayers, app, open, rectangle, basicRemap, fallbacks, switch_karabiner_profile, app_with_notification, shortcut, fn_function_keys, fn_media_keys } from "./utils";
+import * as dotenv from 'dotenv';
+
+dotenv.config()
 
 const name_of_default_fn = "Caps -> Hyper";
 const name_of_builtin_fn = "Caps -> Hyper (Fn keys are mac builtins)";
 
+const default_selected = (process.env.DEFAULT_LAYOUT && process.env.DEFAULT_LAYOUT == "builtin") ? name_of_builtin_fn : name_of_default_fn;
 
 
 const rules: KarabinerRules[] = [
@@ -233,6 +237,7 @@ const rules: KarabinerRules[] = [
     //   o: rectangle('bottom-right'),
       r: rectangle('restore'),
       c: rectangle('center'),
+      l: rectangle('center-half'),
 
       n: rectangle('top-center-sixth'),
       m: rectangle('bottom-center-sixth'),
@@ -273,13 +278,13 @@ const rules: KarabinerRules[] = [
       e: app_with_notification("Microsoft Edge"),
 	  // n = "N"ew edge window
       n: open("raycast://script-commands/new-edge-window"),
-      g: app("Opera GX"),
+      g: app_with_notification("Opera GX"),
       t: app("iTerm"),
       i: app("iTerm"),
       z: app("zoom.us"),
       f: app("Finder"),
       // b = "Beskeder"
-      b: app("Messages"),
+      b: app_with_notification("Messages"),
       p: app_with_notification("Mail"),
       m: app_with_notification("Mattermost"),
     },
@@ -296,6 +301,7 @@ const rules: KarabinerRules[] = [
       f: switch_karabiner_profile(name_of_default_fn, "Fn keys"),
       // b = "Builtins"
       b: switch_karabiner_profile(name_of_builtin_fn, "Media keys"),
+	  m: open("-g raycast://extensions/iamyeizi/toggle-menu-bar/toggle"),
       //   u: {
       //     to: [
       //       {
@@ -393,8 +399,8 @@ const rules: KarabinerRules[] = [
       // K for kalender
       k: open("raycast://extensions/raycast/calendar/my-schedule"),
       c: open("raycast://extensions/raycast/system/open-camera"),
-      n: open("-g raycast://extensions/raycast/floating-notes/toggle-floating-notes-window"),
-      m: open("-g raycast://extensions/raycast/floating-notes/toggle-floating-notes-focus"),
+      n: open("-g raycast://extensions/raycast/raycast-notes/raycast-notes"),
+    //   m: open("-g raycast://extensions/raycast/floating-notes/toggle-floating-notes-focus"),
 	},
 	// u = Ur
 	u: {
@@ -413,7 +419,65 @@ const rules: KarabinerRules[] = [
       u: basicRemap("5", ["left_control"]),
       i: basicRemap("6", ["left_control"]),
       o: basicRemap("7", ["left_control"]),
+      m: basicRemap("5", ["left_control"]),
+      comma: basicRemap("6", ["left_control"]),
+      period: basicRemap("7", ["left_control"]),
     },
+	non_us_pound: {
+		
+		to: [
+			{
+				"pointing_button": "button1",
+				"hold_down_milliseconds": 30,
+			},
+			{
+				"pointing_button": "button1",
+				"hold_down_milliseconds": 30,
+			},
+			{
+				"pointing_button": "button1",
+				"hold_down_milliseconds": 30,
+			},
+			{
+				"pointing_button": "button1",
+				"hold_down_milliseconds": 30,
+			},
+			{
+				"pointing_button": "button1",
+				"hold_down_milliseconds": 30,
+			},
+			{
+				"pointing_button": "button1",
+				"hold_down_milliseconds": 30,
+			},
+			{
+				"pointing_button": "button1",
+				"hold_down_milliseconds": 30,
+			},
+			{
+				"pointing_button": "button1",
+				"hold_down_milliseconds": 30,
+			},
+			{
+				"pointing_button": "button1",
+				"hold_down_milliseconds": 30,
+			},
+			{
+				"pointing_button": "button1",
+				"hold_down_milliseconds": 30,
+				repeat: false,
+			},
+			// {
+			// 	"hold_down_milliseconds": 30,
+			// 	software_function: {
+			// 		"cg_event_double_click": {
+			// 			button: 0
+			// 		}
+			// 	},
+			// 	repeat: false,
+			// }
+		],
+	}
   }),
 ];
 
@@ -1027,330 +1091,12 @@ fs.writeFileSync(
               "mouse_motion_to_scroll.speed": 100
             },
             rules: [
-              {
-                description: "Fn reversal",
-                manipulators: [
-                  {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "f1",
-                      "modifiers": {
-                        "mandatory": [
-                          "fn",
-                        ],
-                      }
-                    },
-                    "to": [
-                      {
-                        "consumer_key_code": "display_brightness_decrement"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "f2",
-                      "modifiers": {
-                        "mandatory": [
-                          "fn",
-                        ],
-                      }
-                    },
-                    "to": [
-                      {
-                        "consumer_key_code": "display_brightness_increment"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "f3",
-                      "modifiers": {
-                        "mandatory": [
-                          "fn",
-                        ],
-                      }
-                    },
-                    "to": [
-                      {
-                        "apple_vendor_keyboard_key_code": "mission_control"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "f4",
-                      "modifiers": {
-                        "mandatory": [
-                          "fn",
-                        ],
-                      }
-                    },
-                    "to": [
-                      {
-                        "key_code": "f4"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "f5",
-                      "modifiers": {
-                        "mandatory": [
-                          "fn",
-                        ],
-                      }
-                    },
-                    "to": [
-                      {
-                        "apple_vendor_top_case_key_code": "illumination_down"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "f6",
-                      "modifiers": {
-                        "mandatory": [
-                          "fn",
-                        ],
-                      }
-                    },
-                    "to": [
-                      {
-                        "apple_vendor_top_case_key_code": "illumination_up"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "f7",
-                      "modifiers": {
-                        "mandatory": [
-                          "fn",
-                        ],
-                      }
-                    },
-                    "to": [
-                      {
-                        "consumer_key_code": "rewind"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "f8",
-                      "modifiers": {
-                        "mandatory": [
-                          "fn",
-                        ],
-                      }
-                    },
-                    "to": [
-                      {
-                        "consumer_key_code": "play_or_pause"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "f9",
-                      "modifiers": {
-                        "mandatory": [
-                          "fn",
-                        ],
-                      }
-                    },
-                    "to": [
-                      {
-                        "consumer_key_code": "fast_forward"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "f10",
-                      "modifiers": {
-                        "mandatory": [
-                          "fn",
-                        ],
-                      }
-                    },
-                    "to": [
-                      {
-                        "consumer_key_code": "mute"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "f11",
-                      "modifiers": {
-                        "mandatory": [
-                          "fn",
-                        ],
-                      }
-                    },
-                    "to": [
-                      {
-                        "consumer_key_code": "volume_decrement"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "basic",
-                    "from": {
-                      "key_code": "f12",
-                      "modifiers": {
-                        "mandatory": [
-                          "fn",
-                        ],
-                      }
-                    },
-                    "to": [
-                      {
-                        "consumer_key_code": "volume_increment"
-                      }
-                    ]
-                  },
-                ],
-              },
-              ...rules
+              ...rules,
+              fn_function_keys,
             ],
           },
-          "selected": true,
+          "selected": (default_selected == name_of_default_fn),
           ...basic_params,
-          "fn_function_keys": [
-            {
-              "from": {
-                "key_code": "f1"
-              },
-              "to": [
-                {
-                  "key_code": "f1"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f2"
-              },
-              "to": [
-                {
-                  "key_code": "f2"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f3"
-              },
-              "to": [
-                {
-                  "key_code": "f3"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f4"
-              },
-              "to": [
-                {
-                  "key_code": "f4"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f5"
-              },
-              "to": [
-                {
-                  "key_code": "f5"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f6"
-              },
-              "to": [
-                {
-                  "key_code": "f6"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f7"
-              },
-              "to": [
-                {
-                  "key_code": "f7"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f8"
-              },
-              "to": [
-                {
-                  "key_code": "f8"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f9"
-              },
-              "to": [
-                {
-                  "key_code": "f9"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f10"
-              },
-              "to": [
-                {
-                  "key_code": "f10"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f11"
-              },
-              "to": [
-                {
-                  "key_code": "f11"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f12"
-              },
-              "to": [
-                {
-                  "key_code": "f12"
-                }
-              ]
-            }
-          ]
         },
         {
           name: name_of_builtin_fn,
@@ -1362,132 +1108,13 @@ fs.writeFileSync(
               "basic.to_if_held_down_threshold_milliseconds": 500,
               "mouse_motion_to_scroll.speed": 100
             },
-            rules,
+            rules: [
+              ...rules,
+              fn_media_keys,
+            ],
           },
-          "selected": false,
+          "selected": (default_selected == name_of_builtin_fn),
           ...basic_params,
-          "fn_function_keys": [
-            {
-              "from": {
-                "key_code": "f1"
-              },
-              "to": [
-                {
-                  "consumer_key_code": "display_brightness_decrement"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f2"
-              },
-              "to": [
-                {
-                  "consumer_key_code": "display_brightness_increment"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f3"
-              },
-              "to": [
-                {
-                  "apple_vendor_keyboard_key_code": "mission_control"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f4"
-              },
-              "to": [
-                {
-                  "apple_vendor_keyboard_key_code": "spotlight"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f5"
-              },
-              "to": [
-                {
-                  "apple_vendor_top_case_key_code": "illumination_down"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f6"
-              },
-              "to": [
-                {
-                  "apple_vendor_top_case_key_code": "illumination_up"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f7"
-              },
-              "to": [
-                {
-                  "consumer_key_code": "rewind"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f8"
-              },
-              "to": [
-                {
-                  "consumer_key_code": "play_or_pause"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f9"
-              },
-              "to": [
-                {
-                  "consumer_key_code": "fast_forward"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f10"
-              },
-              "to": [
-                {
-                  "consumer_key_code": "mute"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f11"
-              },
-              "to": [
-                {
-                  "consumer_key_code": "volume_decrement"
-                }
-              ]
-            },
-            {
-              "from": {
-                "key_code": "f12"
-              },
-              "to": [
-                {
-                  "consumer_key_code": "volume_increment"
-                }
-              ]
-            }
-          ],
         }
       ],
     },
