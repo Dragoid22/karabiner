@@ -12,6 +12,19 @@ type HyperKeySublayer = {
   // The ? is necessary, otherwise we'd have to define something for _every_ key code
   [key_code in KeyCode]?: LayerCommand;
 };
+type StickySublayerHelper = {
+  help_text: string;
+  // commands: HyperKeyStickySublayer;
+  commands: HyperKeySublayer;
+}
+type HyperKeyStickySublayer = {
+  // The ? is necessary, otherwise we'd have to define something for _every_ key code
+  [key_code in KeyCode]?: StickySublayerHelper;
+};
+type StickyDescriptor = {
+  help_text: string;
+  command: LayerCommand;
+};
 
 /**
  * Create a Hyper Key sublayer, where every command is prefixed with a key
@@ -20,114 +33,230 @@ type HyperKeySublayer = {
  */
 export function createHyperSubLayer(
   sublayer_key: KeyCode,
-  commands: HyperKeySublayer,
+  commands: StickySublayerHelper|HyperKeySublayer,
   allSubLayerVariables: string[]
 ): Manipulator[] {
   const subLayerVariableName = generateSubLayerVariableName(sublayer_key);
 
+  let karabiner_notification_message: string|false = false;
+  if (typeof commands['help_text'] !== "undefined") {
+    karabiner_notification_message = commands['help_text'];
+    commands = (commands as StickySublayerHelper).commands
+  }
+
+  let base_to_if_alone: To[] = [];
+  let base_to_after_key_up: To[] = [];
+  let base_to: To[] = [];
+  if (karabiner_notification_message !== false) {
+    // It's a sticky sublayer
+    base_to.push({
+      set_variable: {
+        name: "sublayer",
+        value: sublayer_key,
+      },
+    })
+    base_to.push({
+      set_notification_message: {
+        id: "sublayer",
+        text: karabiner_notification_message,
+      }
+    })
+  } else {
+    base_to.push({
+      set_variable: {
+        name: subLayerVariableName,
+        value: 1,
+      },
+    })
+    base_to_after_key_up.push({
+      set_variable: {
+        name: subLayerVariableName,
+        // The default value of a variable is 0: https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/conditions/variable/
+        // That means by using 0 and 1 we can filter for "0" in the conditions below and it'll work on startup
+        value: 0,
+      },
+    });
+    base_to_if_alone = [{
+      key_code: sublayer_key,
+      modifiers: [
+        "left_shift",
+        "left_command",
+        "left_control",
+        "left_option",
+      ],
+    }];
+  }
+
+  let layer_definition: Manipulator = {
+    description: `Toggle Hyper sublayer ${sublayer_key}`,
+    type: "basic",
+    from: {
+      key_code: sublayer_key,
+      modifiers: {
+        optional: ["any"],
+      },
+    },
+
+    to: base_to,
+    // This enables us to press other sublayer keys in the current sublayer
+    // (e.g. Hyper + O > M even though Hyper + M is also a sublayer)
+    // basically, only trigger a sublayer if no other sublayer is active
+    conditions: [
+      ...allSubLayerVariables
+        .filter(
+          (subLayerVariable) => subLayerVariable !== subLayerVariableName
+        )
+        .map((subLayerVariable) => ({
+		  name: subLayerVariable,
+          type: "variable_if" as const,
+          value: 0,
+        })),
+      {
+		name: "hyper",
+        type: "variable_if",
+        value: 1,
+      },
+    ],
+  };
+
+  if (base_to_if_alone.length) {
+    layer_definition.to_if_alone = base_to_if_alone;
+  }
+  if (base_to_after_key_up.length) {
+    layer_definition.to_after_key_up = base_to_after_key_up;
+  }
+
   return [
     // When Hyper + sublayer_key is pressed, set the variable to 1; on key_up, set it to 0 again
-    {
-      description: `Toggle Hyper sublayer ${sublayer_key}`,
-      type: "basic",
-      from: {
-        key_code: sublayer_key,
-        modifiers: {
-          optional: ["any"],
-        },
-      },
-      to_if_alone: [{
-        key_code: sublayer_key,
-        modifiers: [
-          "left_shift",
-          "left_command",
-          "left_control",
-          "left_option",
-        ],
-      }],
-      to_after_key_up: [
-        {
-          set_variable: {
-            name: subLayerVariableName,
-            // The default value of a variable is 0: https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/conditions/variable/
-            // That means by using 0 and 1 we can filter for "0" in the conditions below and it'll work on startup
-            value: 0,
-          },
-        },
-        // {
-        //   set_variable: {
-        //     name: `${subLayerVariableName}_used`,
-        //     value: 0,
-        //   }
-        // },
-      ],
-      to: [
-        {
-          set_variable: {
-            name: subLayerVariableName,
-            value: 1,
-          },
-        },
-      ],
-      // This enables us to press other sublayer keys in the current sublayer
-      // (e.g. Hyper + O > M even though Hyper + M is also a sublayer)
-      // basically, only trigger a sublayer if no other sublayer is active
-      conditions: [
-        ...allSubLayerVariables
-          .filter(
-            (subLayerVariable) => subLayerVariable !== subLayerVariableName
-          )
-          .map((subLayerVariable) => ({
-            type: "variable_if" as const,
-            name: subLayerVariable,
-            value: 0,
-          })),
-        {
-          type: "variable_if",
-          name: "hyper",
-          value: 1,
-        },
-      ],
-    },
+    layer_definition,
     // Define the individual commands that are meant to trigger in the sublayer
     ...(Object.keys(commands) as (keyof typeof commands)[]).map(
-      (command_key): Manipulator => ({
-        ...commands[command_key],
-        type: "basic" as const,
-        from: {
-          key_code: command_key,
-          modifiers: {
-            optional: ["any"],
+      (command_key): Manipulator => {
+        let command = commands[command_key] as LayerCommand|StickyDescriptor;
+        let sticky = false;
+        if (karabiner_notification_message !== false) {
+          sticky = true;
+        }
+        if (typeof command['help_text'] !== "undefined") {
+          command = (command as StickyDescriptor).command;
+          sticky = true;
+        }
+        // Just to calm typescript down.
+        command = command as LayerCommand;
+        // if (typeof command['to'] === "undefined") {
+        //   command.to = [];
+        // }
+        let conditions;
+        if (sticky === false) {
+          conditions = [
+            {
+			  name: subLayerVariableName,
+              type: "variable_if",
+              value: 1,
+            },
+          ];
+        } else {
+          command.to.unshift({
+            set_variable: {
+              name: "sublayer",
+              // The default value of a variable is 0: https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/conditions/variable/
+              // That means by using 0 and 1 we can filter for "0" in the conditions below and it'll work on startup
+              value: 0,
+            },
+          });
+          conditions = [
+            {
+			  name: "sublayer",
+              type: "variable_if",
+              value: sublayer_key,
+            },
+          ];
+        }
+        command.to.unshift({
+            set_notification_message: {
+                id: "sublayer",
+                text: ""
+            }
+        });
+        return {
+          ...command,
+          type: "basic" as const,
+          from: {
+            key_code: command_key,
+            modifiers: {
+              optional: ["any"],
+            },
           },
-        },
-        // to_after_key_up: [
-        //   {
-        //     set_variable: {
-        //       name: `${subLayerVariableName}_used`,
-        //       value: 1,
-        //     }
-        //   },
-        // ],
-        // Only trigger this command if the variable is 1 (i.e., if Hyper + sublayer is held)
-        conditions: [
-          {
-            type: "variable_if",
-            name: subLayerVariableName,
-            value: 1,
-          },
-        ],
-      })
+          // Only trigger this command if the variable is 1 (i.e., if Hyper + sublayer is held)
+          conditions: conditions,
+        }
+      }
     ),
   ];
 }
+
+export function stickyLayer(header: string, commands: {
+  [key_code in KeyCode]?: StickyDescriptor;
+}): StickySublayerHelper {
+  let help_texts: string[] = [];
+  let return_commands = {};
+  Object.entries(commands).forEach(([key, value]) => {
+    let tmp = value;
+    help_texts.push(`${key.toUpperCase()} - ${tmp.help_text}`);
+    return_commands[key] = tmp.command;
+  });
+  let help_text = `${header}\n\n${help_texts.join("\n")}`;
+
+  return {
+    help_text: help_text,
+    commands: return_commands,
+  }
+}
+
+export function layerHelper(description: string, layerCommand: LayerCommand): StickyDescriptor {
+  return {help_text: description, command: layerCommand};
+}
+
+export function clearSublayerWith(keycode: KeyCode): Manipulator {
+  return {
+    description: `Reset layer with ${keycode}`,
+    from: {
+      "key_code": keycode,
+    },
+    to: [
+      {
+        set_variable: {
+            "name": "sublayer",
+            "value": 0
+        }
+      },
+      {
+        set_notification_message: {
+          id: "sublayer",
+          text: ""
+        }
+      }
+    ],
+    conditions: [
+      {
+		name: "sublayer",
+        type: "variable_unless",
+        value: 0,
+      }
+    ],
+    type: "basic",
+  }
+}
+
+
 
 /**
  * Create all hyper sublayers. This needs to be a single function, as well need to
  * have all the hyper variable names in order to filter them and make sure only one
  * activates at a time
  */
-export function createHyperSubLayers(subLayers: {
-  [key_code in KeyCode]?: HyperKeySublayer | LayerCommand;
+export function generateAllHyperSubLayers(subLayers: {
+  [key_code in KeyCode]?: StickySublayerHelper | HyperKeySublayer | LayerCommand;
 }): KarabinerRules[] {
   const allSubLayerVariables = (
     Object.keys(subLayers) as (keyof typeof subLayers)[]
@@ -145,44 +274,48 @@ export function createHyperSubLayers(subLayers: {
   .map((sublayer_key) => generateSubLayerVariableName(sublayer_key));
 
 
-  return Object.entries(subLayers).map(([key, value]) =>
-    "to" in value
-      ? {
-        description: `Hyper Key + ${key}`,
-        manipulators: [
-          {
-            ...value,
-            type: "basic" as const,
-            from: {
-              key_code: key as KeyCode,
-              modifiers: {
-                optional: ["any"],
-              },
-            },
-            conditions: [
-              {
-                type: "variable_if",
-                name: "hyper",
-                value: 1,
-              },
-              ...allSubLayerVariables.map((subLayerVariable) => ({
-                type: "variable_if" as const,
-                name: subLayerVariable,
-                value: 0,
-              })),
-            ],
-          },
-        ],
-      }
-      : {
-        description: `Hyper Key sublayer "${key}"`,
-        manipulators: createHyperSubLayer(
-          key as KeyCode,
-          value,
-          allSubLayerVariables
-        ),
-      }
-  );
+	return Object.entries(subLayers).map(([key, value]) => {
+		if ("to" in value) {
+      // Simple remap
+			return {
+				description: `Hyper Key + ${key}`,
+				manipulators: [
+					{
+						...value,
+						type: "basic" as const,
+						from: {
+							key_code: key as KeyCode,
+							modifiers: {
+								optional: ["any"],
+							},
+						},
+						conditions: [
+							{
+								name: "hyper",
+								type: "variable_if",
+								value: 1,
+							},
+							...allSubLayerVariables.map((subLayerVariable) => ({
+								name: subLayerVariable,
+								type: "variable_if" as const,
+								value: 0,
+							})),
+						],
+					},
+				],
+			};
+		} else {
+      // Sublayer
+			return {
+				description: `Hyper Key sublayer "${key}"`,
+				manipulators: createHyperSubLayer(
+					key as KeyCode,
+					value,
+					allSubLayerVariables
+				),
+			}
+		}
+	});
 }
 
 function generateSubLayerVariableName(key: KeyCode) {
@@ -199,6 +332,18 @@ export function open(...what: string[]): LayerCommand {
     })),
     description: `Open ${what.join(" & ")}`,
   };
+}
+
+export function open_bundle(bundle_identifier: string): LayerCommand {
+  return {
+    to: [{
+      software_function: {
+        open_application: {
+          bundle_identifier: bundle_identifier
+        }
+      }
+    }],
+  }
 }
 
 /**

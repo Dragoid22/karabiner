@@ -112,6 +112,11 @@ export interface To {
   modifiers?: string[];
   repeat?: Boolean;
   shell_command?: string;
+  set_notification_message?: {
+	id: string;
+	text?: string;
+  };
+  hold_down_milliseconds?: number;
   set_variable?: {
     name: string;
     value: boolean | number | string;
@@ -136,6 +141,9 @@ export interface MouseKey {
 
 export interface SoftwareFunction {
   iokit_power_management_sleep_system?: {};
+  open_application?: {
+	bundle_identifier: string;
+  };
 }
 
 export type KeyCode =
