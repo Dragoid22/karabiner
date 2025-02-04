@@ -244,18 +244,23 @@ const rules: KarabinerRules[] = [
 
 
     // s = "System"
-    s: {
+    s: stickyLayer("Scripts", {
       // f = "Fn"
-      f: switch_karabiner_profile(name_of_default_fn, "Fn keys"),
+      f: layerHelper("(F)unction keys", switch_karabiner_profile(name_of_default_fn, "Fn keys")),
       // b = "Builtins"
-      b: switch_karabiner_profile(name_of_builtin_fn, "Media keys"),
-  	  m: open("-g raycast://extensions/iamyeizi/toggle-menu-bar/toggle"),
-      p: basicRemap("play_or_pause"),
+      b: layerHelper("(B)uiltin media keys", switch_karabiner_profile(name_of_builtin_fn, "Media keys")),
+  	  m: layerHelper("Toggle (M)enu bar", open("-g raycast://extensions/iamyeizi/toggle-menu-bar/toggle")),
+      p: layerHelper("(P)lay or pause", basicRemap("play_or_pause")),
       //   // "D"o not disturb toggle
-      d: open(
+      d: layerHelper("(D)o not disturb", open(
         `raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`
-      ),
-    },
+      )),
+
+	  o: layerHelper("(O)pen cloudflare tunnel", open("raycast://script-commands/open-cloudflare-tunnel")),
+	  c: layerHelper("(C)lost cloudflare tunnel", open("raycast://script-commands/close-cloudflare-tunnel")),
+	  1: layerHelper("SkvizBiz VPN", open("-g raycast://script-commands/connect-to-skvizbiz-vpn")),
+	  2: layerHelper("Close SkvizBiz VPN", open("-g raycast://script-commands/disconnect-skvizbiz-vpn")),
+    }),
 
     // // c = Musi*c* which isn't "m" because we want it to be on the left hand
     // c: {

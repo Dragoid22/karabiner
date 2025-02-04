@@ -196,6 +196,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -288,6 +293,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -384,6 +394,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -476,6 +491,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -572,6 +592,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -664,6 +689,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -760,6 +790,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -852,6 +887,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -948,6 +988,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -1042,6 +1087,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -1134,6 +1184,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -1274,6 +1329,11 @@
                   },
                   {
                     "name": "hyper_sublayer_page_down",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "sublayer",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -1700,6 +1760,11 @@
                   },
                   {
                     "name": "hyper_sublayer_page_down",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "sublayer",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -2500,6 +2565,11 @@
                     "value": 0
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
@@ -2846,6 +2916,11 @@
                     "value": 0
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
@@ -2994,6 +3069,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -3086,6 +3166,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -3226,6 +3311,11 @@
                   },
                   {
                     "name": "hyper_sublayer_page_down",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "sublayer",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -3378,6 +3468,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -3516,6 +3611,11 @@
                   },
                   {
                     "name": "hyper_sublayer_page_down",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "sublayer",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -3938,6 +4038,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -4032,6 +4137,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -4111,9 +4221,15 @@
                 },
                 "to": [
                   {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": "Scripts\n\n1 - SkvizBiz VPN\n2 - Close SkvizBiz VPN\nF - (F)unction keys\nB - (B)uiltin media keys\nM - Toggle (M)enu bar\nP - (P)lay or pause\nD - (D)o not disturb\nO - (O)pen cloudflare tunnel\nC - (C)lost cloudflare tunnel"
+                    }
+                  },
+                  {
                     "set_variable": {
-                      "name": "hyper_sublayer_s",
-                      "value": 1
+                      "name": "sublayer",
+                      "value": "s"
                     }
                   }
                 ],
@@ -4174,28 +4290,14 @@
                     "value": 0
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
-                  }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "s",
-                    "modifiers": [
-                      "left_shift",
-                      "left_command",
-                      "left_control",
-                      "left_option"
-                    ]
-                  }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_sublayer_s",
-                      "value": 0
-                    }
                   }
                 ]
               },
@@ -4205,6 +4307,84 @@
                     "set_notification_message": {
                       "id": "sublayer",
                       "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "shell_command": "open -g raycast://script-commands/connect-to-skvizbiz-vpn"
+                  }
+                ],
+                "description": "Open -g raycast://script-commands/connect-to-skvizbiz-vpn",
+                "type": "basic",
+                "from": {
+                  "key_code": "1",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "s"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "shell_command": "open -g raycast://script-commands/disconnect-skvizbiz-vpn"
+                  }
+                ],
+                "description": "Open -g raycast://script-commands/disconnect-skvizbiz-vpn",
+                "type": "basic",
+                "from": {
+                  "key_code": "2",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "s"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
                     }
                   },
                   {
@@ -4223,9 +4403,9 @@
                 },
                 "conditions": [
                   {
-                    "name": "hyper_sublayer_s",
+                    "name": "sublayer",
                     "type": "variable_if",
-                    "value": 1
+                    "value": "s"
                   }
                 ]
               },
@@ -4235,6 +4415,12 @@
                     "set_notification_message": {
                       "id": "sublayer",
                       "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
                     }
                   },
                   {
@@ -4253,9 +4439,9 @@
                 },
                 "conditions": [
                   {
-                    "name": "hyper_sublayer_s",
+                    "name": "sublayer",
                     "type": "variable_if",
-                    "value": 1
+                    "value": "s"
                   }
                 ]
               },
@@ -4265,6 +4451,12 @@
                     "set_notification_message": {
                       "id": "sublayer",
                       "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
                     }
                   },
                   {
@@ -4283,9 +4475,9 @@
                 },
                 "conditions": [
                   {
-                    "name": "hyper_sublayer_s",
+                    "name": "sublayer",
                     "type": "variable_if",
-                    "value": 1
+                    "value": "s"
                   }
                 ]
               },
@@ -4295,6 +4487,12 @@
                     "set_notification_message": {
                       "id": "sublayer",
                       "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
                     }
                   },
                   {
@@ -4312,9 +4510,9 @@
                 },
                 "conditions": [
                   {
-                    "name": "hyper_sublayer_s",
+                    "name": "sublayer",
                     "type": "variable_if",
-                    "value": 1
+                    "value": "s"
                   }
                 ]
               },
@@ -4324,6 +4522,12 @@
                     "set_notification_message": {
                       "id": "sublayer",
                       "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
                     }
                   },
                   {
@@ -4342,9 +4546,81 @@
                 },
                 "conditions": [
                   {
-                    "name": "hyper_sublayer_s",
+                    "name": "sublayer",
                     "type": "variable_if",
-                    "value": 1
+                    "value": "s"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "shell_command": "open raycast://script-commands/open-cloudflare-tunnel"
+                  }
+                ],
+                "description": "Open raycast://script-commands/open-cloudflare-tunnel",
+                "type": "basic",
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "s"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "shell_command": "open raycast://script-commands/close-cloudflare-tunnel"
+                  }
+                ],
+                "description": "Open raycast://script-commands/close-cloudflare-tunnel",
+                "type": "basic",
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "s"
                   }
                 ]
               }
@@ -4425,6 +4701,11 @@
                   },
                   {
                     "name": "hyper_sublayer_page_down",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "sublayer",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -5038,6 +5319,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -5127,6 +5413,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -5206,15 +5497,15 @@
                 },
                 "to": [
                   {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": "g"
-                    }
-                  },
-                  {
                     "set_notification_message": {
                       "id": "sublayer",
                       "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nE - Microsoft (E)dge\nN - (N)ew Edge Window\nG - Opera (G)X\nT - i(T)erm\nI - (i)Term\nZ - (Z)oom\nF - (F)inder\nB - (B)eskeder\nP - (P)ost\nM - (M)attermost"
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": "g"
                     }
                   }
                 ],
@@ -5271,6 +5562,11 @@
                   },
                   {
                     "name": "hyper_sublayer_page_down",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "sublayer",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -5740,6 +6036,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -5828,6 +6129,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -5914,6 +6220,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -6010,6 +6321,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -6104,6 +6420,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -6191,6 +6512,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -6287,6 +6613,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -6379,6 +6710,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -6475,6 +6811,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -6564,6 +6905,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -6660,6 +7006,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -6752,6 +7103,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -6848,6 +7204,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -6940,6 +7301,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -7036,6 +7402,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -7128,6 +7499,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -7224,6 +7600,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -7316,6 +7697,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -7412,6 +7798,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -7504,6 +7895,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -7600,6 +7996,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -7692,6 +8093,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -7788,6 +8194,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -7880,6 +8291,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -7976,6 +8392,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -8068,6 +8489,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -8164,6 +8590,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -8256,6 +8687,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -8352,6 +8788,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -8444,6 +8885,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -8540,6 +8986,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -8632,6 +9083,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -8728,6 +9184,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -8820,6 +9281,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -8916,6 +9382,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -9008,6 +9479,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -9104,6 +9580,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -9196,6 +9677,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -9292,6 +9778,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -9386,6 +9877,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -9475,6 +9971,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -9562,6 +10063,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -9658,6 +10164,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -9750,6 +10261,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -9846,6 +10362,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -9938,6 +10459,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -10034,6 +10560,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -10126,6 +10657,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -10222,6 +10758,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -10314,6 +10855,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -10410,6 +10956,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -10502,6 +11053,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -10630,6 +11186,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -10716,6 +11277,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -10805,6 +11371,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -10901,6 +11472,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -10990,6 +11566,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -11083,6 +11664,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -11172,6 +11758,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -11266,6 +11857,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -11896,6 +12492,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -11988,6 +12589,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -12084,6 +12690,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -12176,6 +12787,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -12272,6 +12888,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -12364,6 +12985,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -12460,6 +13086,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -12552,6 +13183,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -12648,6 +13284,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -12742,6 +13383,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -12834,6 +13480,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -12974,6 +13625,11 @@
                   },
                   {
                     "name": "hyper_sublayer_page_down",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "sublayer",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -13400,6 +14056,11 @@
                   },
                   {
                     "name": "hyper_sublayer_page_down",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "sublayer",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -14200,6 +14861,11 @@
                     "value": 0
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
@@ -14546,6 +15212,11 @@
                     "value": 0
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
@@ -14694,6 +15365,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -14786,6 +15462,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -14926,6 +15607,11 @@
                   },
                   {
                     "name": "hyper_sublayer_page_down",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "sublayer",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -15078,6 +15764,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -15216,6 +15907,11 @@
                   },
                   {
                     "name": "hyper_sublayer_page_down",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "sublayer",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -15638,6 +16334,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -15732,6 +16433,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -15811,9 +16517,15 @@
                 },
                 "to": [
                   {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": "Scripts\n\n1 - SkvizBiz VPN\n2 - Close SkvizBiz VPN\nF - (F)unction keys\nB - (B)uiltin media keys\nM - Toggle (M)enu bar\nP - (P)lay or pause\nD - (D)o not disturb\nO - (O)pen cloudflare tunnel\nC - (C)lost cloudflare tunnel"
+                    }
+                  },
+                  {
                     "set_variable": {
-                      "name": "hyper_sublayer_s",
-                      "value": 1
+                      "name": "sublayer",
+                      "value": "s"
                     }
                   }
                 ],
@@ -15874,28 +16586,14 @@
                     "value": 0
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
-                  }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "s",
-                    "modifiers": [
-                      "left_shift",
-                      "left_command",
-                      "left_control",
-                      "left_option"
-                    ]
-                  }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_sublayer_s",
-                      "value": 0
-                    }
                   }
                 ]
               },
@@ -15905,6 +16603,84 @@
                     "set_notification_message": {
                       "id": "sublayer",
                       "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "shell_command": "open -g raycast://script-commands/connect-to-skvizbiz-vpn"
+                  }
+                ],
+                "description": "Open -g raycast://script-commands/connect-to-skvizbiz-vpn",
+                "type": "basic",
+                "from": {
+                  "key_code": "1",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "s"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "shell_command": "open -g raycast://script-commands/disconnect-skvizbiz-vpn"
+                  }
+                ],
+                "description": "Open -g raycast://script-commands/disconnect-skvizbiz-vpn",
+                "type": "basic",
+                "from": {
+                  "key_code": "2",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "s"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
                     }
                   },
                   {
@@ -15923,9 +16699,9 @@
                 },
                 "conditions": [
                   {
-                    "name": "hyper_sublayer_s",
+                    "name": "sublayer",
                     "type": "variable_if",
-                    "value": 1
+                    "value": "s"
                   }
                 ]
               },
@@ -15935,6 +16711,12 @@
                     "set_notification_message": {
                       "id": "sublayer",
                       "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
                     }
                   },
                   {
@@ -15953,9 +16735,9 @@
                 },
                 "conditions": [
                   {
-                    "name": "hyper_sublayer_s",
+                    "name": "sublayer",
                     "type": "variable_if",
-                    "value": 1
+                    "value": "s"
                   }
                 ]
               },
@@ -15965,6 +16747,12 @@
                     "set_notification_message": {
                       "id": "sublayer",
                       "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
                     }
                   },
                   {
@@ -15983,9 +16771,9 @@
                 },
                 "conditions": [
                   {
-                    "name": "hyper_sublayer_s",
+                    "name": "sublayer",
                     "type": "variable_if",
-                    "value": 1
+                    "value": "s"
                   }
                 ]
               },
@@ -15995,6 +16783,12 @@
                     "set_notification_message": {
                       "id": "sublayer",
                       "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
                     }
                   },
                   {
@@ -16012,9 +16806,9 @@
                 },
                 "conditions": [
                   {
-                    "name": "hyper_sublayer_s",
+                    "name": "sublayer",
                     "type": "variable_if",
-                    "value": 1
+                    "value": "s"
                   }
                 ]
               },
@@ -16024,6 +16818,12 @@
                     "set_notification_message": {
                       "id": "sublayer",
                       "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
                     }
                   },
                   {
@@ -16042,9 +16842,81 @@
                 },
                 "conditions": [
                   {
-                    "name": "hyper_sublayer_s",
+                    "name": "sublayer",
                     "type": "variable_if",
-                    "value": 1
+                    "value": "s"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "shell_command": "open raycast://script-commands/open-cloudflare-tunnel"
+                  }
+                ],
+                "description": "Open raycast://script-commands/open-cloudflare-tunnel",
+                "type": "basic",
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "s"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "shell_command": "open raycast://script-commands/close-cloudflare-tunnel"
+                  }
+                ],
+                "description": "Open raycast://script-commands/close-cloudflare-tunnel",
+                "type": "basic",
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "s"
                   }
                 ]
               }
@@ -16125,6 +16997,11 @@
                   },
                   {
                     "name": "hyper_sublayer_page_down",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "sublayer",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -16738,6 +17615,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -16827,6 +17709,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -16906,15 +17793,15 @@
                 },
                 "to": [
                   {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": "g"
-                    }
-                  },
-                  {
                     "set_notification_message": {
                       "id": "sublayer",
                       "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nE - Microsoft (E)dge\nN - (N)ew Edge Window\nG - Opera (G)X\nT - i(T)erm\nI - (i)Term\nZ - (Z)oom\nF - (F)inder\nB - (B)eskeder\nP - (P)ost\nM - (M)attermost"
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": "g"
                     }
                   }
                 ],
@@ -16971,6 +17858,11 @@
                   },
                   {
                     "name": "hyper_sublayer_page_down",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "sublayer",
                     "type": "variable_if",
                     "value": 0
                   },
@@ -17440,6 +18332,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -17528,6 +18425,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -17614,6 +18516,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -17710,6 +18617,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -17804,6 +18716,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -17891,6 +18808,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -17987,6 +18909,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -18079,6 +19006,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -18175,6 +19107,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -18264,6 +19201,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -18360,6 +19302,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -18452,6 +19399,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -18548,6 +19500,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -18640,6 +19597,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -18736,6 +19698,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -18828,6 +19795,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -18924,6 +19896,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -19016,6 +19993,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -19112,6 +20094,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -19204,6 +20191,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -19300,6 +20292,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -19392,6 +20389,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -19488,6 +20490,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -19580,6 +20587,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -19676,6 +20688,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -19768,6 +20785,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -19864,6 +20886,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -19956,6 +20983,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -20052,6 +21084,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -20144,6 +21181,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -20240,6 +21282,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -20332,6 +21379,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -20428,6 +21480,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -20520,6 +21577,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -20616,6 +21678,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -20708,6 +21775,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -20804,6 +21876,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -20896,6 +21973,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -20992,6 +22074,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -21086,6 +22173,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -21175,6 +22267,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -21262,6 +22359,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -21358,6 +22460,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -21450,6 +22557,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -21546,6 +22658,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -21638,6 +22755,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -21734,6 +22856,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -21826,6 +22953,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -21922,6 +23054,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -22014,6 +23151,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -22110,6 +23252,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -22202,6 +23349,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -22330,6 +23482,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -22416,6 +23573,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -22505,6 +23667,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -22601,6 +23768,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -22690,6 +23862,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -22783,6 +23960,11 @@
                     "value": 1
                   },
                   {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
                     "name": "hyper_sublayer_q",
                     "type": "variable_if",
                     "value": 0
@@ -22872,6 +24054,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",
@@ -22966,6 +24153,11 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
+                  },
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": 0
                   },
                   {
                     "name": "hyper_sublayer_q",

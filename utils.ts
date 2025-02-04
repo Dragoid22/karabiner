@@ -50,16 +50,16 @@ export function createHyperSubLayer(
   if (karabiner_notification_message !== false) {
     // It's a sticky sublayer
     base_to.push({
-      set_variable: {
-        name: "sublayer",
-        value: sublayer_key,
-      },
-    })
-    base_to.push({
       set_notification_message: {
         id: "sublayer",
         text: karabiner_notification_message,
       }
+	  })
+	  base_to.push({
+      set_variable: {
+        name: "sublayer",
+        value: sublayer_key,
+      },
     })
   } else {
     base_to.push({
@@ -107,12 +107,17 @@ export function createHyperSubLayer(
           (subLayerVariable) => subLayerVariable !== subLayerVariableName
         )
         .map((subLayerVariable) => ({
-		  name: subLayerVariable,
+          name: subLayerVariable,
           type: "variable_if" as const,
           value: 0,
         })),
       {
-		name: "hyper",
+        name: "sublayer",
+        type: "variable_if" as const,
+        value: 0,
+      },
+      {
+        name: "hyper",
         type: "variable_if",
         value: 1,
       },
@@ -295,11 +300,17 @@ export function generateAllHyperSubLayers(subLayers: {
 								type: "variable_if",
 								value: 1,
 							},
+							{
+								name: "sublayer",
+								type: "variable_if" as const,
+								value: 0,
+							},
 							...allSubLayerVariables.map((subLayerVariable) => ({
 								name: subLayerVariable,
 								type: "variable_if" as const,
 								value: 0,
 							})),
+
 						],
 					},
 				],
