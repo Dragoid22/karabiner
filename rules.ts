@@ -141,9 +141,10 @@ const rules: KarabinerRules[] = [
       c: layerHelper("VS (C)ode", app("Visual Studio Code")),
       v: layerHelper("(V)S Code projects", open("raycast://extensions/thomas/visual-studio-code/index")),
       e: layerHelper("Microsoft (E)dge", app_with_notification("Microsoft Edge")),
+      r: layerHelper("Zen Browser", app_with_notification("Zen Browser")),
       n: layerHelper("(N)ew Edge Window", open("raycast://script-commands/new-edge-window")),
       g: layerHelper("Opera (G)X", app_with_notification("Opera GX")),
-      t: layerHelper("i(T)erm", app("iTerm")),
+      t: layerHelper("Ghost(t)y", open("raycast://script-commands/new-ghostty-terminal")),
       i: layerHelper("(i)Term", app("iTerm")),
       z: layerHelper("(Z)oom", app("zoom.us")),
       f: layerHelper("(F)inder", app("Finder")),
@@ -244,7 +245,7 @@ const rules: KarabinerRules[] = [
 
 
     // s = "System"
-    s: stickyLayer("Scripts", {
+    s: stickyLayer("Scripts/System", {
       // f = "Fn"
       f: layerHelper("(F)unction keys", switch_karabiner_profile(name_of_default_fn, "Fn keys")),
       // b = "Builtins"
@@ -260,6 +261,7 @@ const rules: KarabinerRules[] = [
 	  c: layerHelper("(C)lost cloudflare tunnel", open("raycast://script-commands/close-cloudflare-tunnel")),
 	  1: layerHelper("SkvizBiz VPN", open("-g raycast://script-commands/connect-to-skvizbiz-vpn")),
 	  2: layerHelper("Close SkvizBiz VPN", open("-g raycast://script-commands/disconnect-skvizbiz-vpn")),
+	  3: layerHelper("VPN Status", open("-g raycast://script-commands/vpn-status-1")),
     }),
 
     // // c = Musi*c* which isn't "m" because we want it to be on the left hand

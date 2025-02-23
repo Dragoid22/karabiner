@@ -4223,7 +4223,7 @@
                   {
                     "set_notification_message": {
                       "id": "sublayer",
-                      "text": "Scripts\n\n1 - SkvizBiz VPN\n2 - Close SkvizBiz VPN\nF - (F)unction keys\nB - (B)uiltin media keys\nM - Toggle (M)enu bar\nP - (P)lay or pause\nD - (D)o not disturb\nO - (O)pen cloudflare tunnel\nC - (C)lost cloudflare tunnel"
+                      "text": "Scripts/System\n\n1 - SkvizBiz VPN\n2 - Close SkvizBiz VPN\n3 - VPN Status\nF - (F)unction keys\nB - (B)uiltin media keys\nM - Toggle (M)enu bar\nP - (P)lay or pause\nD - (D)o not disturb\nO - (O)pen cloudflare tunnel\nC - (C)lost cloudflare tunnel"
                     }
                   },
                   {
@@ -4359,6 +4359,42 @@
                 "type": "basic",
                 "from": {
                   "key_code": "2",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "s"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "shell_command": "open -g raycast://script-commands/vpn-status-1"
+                  }
+                ],
+                "description": "Open -g raycast://script-commands/vpn-status-1",
+                "type": "basic",
+                "from": {
+                  "key_code": "3",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -5499,7 +5535,7 @@
                   {
                     "set_notification_message": {
                       "id": "sublayer",
-                      "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nE - Microsoft (E)dge\nN - (N)ew Edge Window\nG - Opera (G)X\nT - i(T)erm\nI - (i)Term\nZ - (Z)oom\nF - (F)inder\nB - (B)eskeder\nP - (P)ost\nM - (M)attermost"
+                      "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nE - Microsoft (E)dge\nR - Zen Browser\nN - (N)ew Edge Window\nG - Opera (G)X\nT - Ghost(t)y\nI - (i)Term\nZ - (Z)oom\nF - (F)inder\nB - (B)eskeder\nP - (P)ost\nM - (M)attermost"
                     }
                   },
                   {
@@ -5700,6 +5736,42 @@
                     }
                   },
                   {
+                    "shell_command": "(pgrep -f 'Zen Browser' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Zen%20Browser%22%2C%22type%22%3A%22success%22%7D') && open -a 'Zen Browser'"
+                  }
+                ],
+                "description": "Open Zen Browser",
+                "type": "basic",
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "g"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
                     "shell_command": "open raycast://script-commands/new-edge-window"
                   }
                 ],
@@ -5772,10 +5844,10 @@
                     }
                   },
                   {
-                    "shell_command": "open -a 'iTerm.app'"
+                    "shell_command": "open raycast://script-commands/new-ghostty-terminal"
                   }
                 ],
-                "description": "Open -a 'iTerm.app'",
+                "description": "Open raycast://script-commands/new-ghostty-terminal",
                 "type": "basic",
                 "from": {
                   "key_code": "t",
@@ -16519,7 +16591,7 @@
                   {
                     "set_notification_message": {
                       "id": "sublayer",
-                      "text": "Scripts\n\n1 - SkvizBiz VPN\n2 - Close SkvizBiz VPN\nF - (F)unction keys\nB - (B)uiltin media keys\nM - Toggle (M)enu bar\nP - (P)lay or pause\nD - (D)o not disturb\nO - (O)pen cloudflare tunnel\nC - (C)lost cloudflare tunnel"
+                      "text": "Scripts/System\n\n1 - SkvizBiz VPN\n2 - Close SkvizBiz VPN\n3 - VPN Status\nF - (F)unction keys\nB - (B)uiltin media keys\nM - Toggle (M)enu bar\nP - (P)lay or pause\nD - (D)o not disturb\nO - (O)pen cloudflare tunnel\nC - (C)lost cloudflare tunnel"
                     }
                   },
                   {
@@ -16655,6 +16727,42 @@
                 "type": "basic",
                 "from": {
                   "key_code": "2",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "s"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "shell_command": "open -g raycast://script-commands/vpn-status-1"
+                  }
+                ],
+                "description": "Open -g raycast://script-commands/vpn-status-1",
+                "type": "basic",
+                "from": {
+                  "key_code": "3",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -17795,7 +17903,7 @@
                   {
                     "set_notification_message": {
                       "id": "sublayer",
-                      "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nE - Microsoft (E)dge\nN - (N)ew Edge Window\nG - Opera (G)X\nT - i(T)erm\nI - (i)Term\nZ - (Z)oom\nF - (F)inder\nB - (B)eskeder\nP - (P)ost\nM - (M)attermost"
+                      "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nE - Microsoft (E)dge\nR - Zen Browser\nN - (N)ew Edge Window\nG - Opera (G)X\nT - Ghost(t)y\nI - (i)Term\nZ - (Z)oom\nF - (F)inder\nB - (B)eskeder\nP - (P)ost\nM - (M)attermost"
                     }
                   },
                   {
@@ -17996,6 +18104,42 @@
                     }
                   },
                   {
+                    "shell_command": "(pgrep -f 'Zen Browser' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Zen%20Browser%22%2C%22type%22%3A%22success%22%7D') && open -a 'Zen Browser'"
+                  }
+                ],
+                "description": "Open Zen Browser",
+                "type": "basic",
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "g"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
                     "shell_command": "open raycast://script-commands/new-edge-window"
                   }
                 ],
@@ -18068,10 +18212,10 @@
                     }
                   },
                   {
-                    "shell_command": "open -a 'iTerm.app'"
+                    "shell_command": "open raycast://script-commands/new-ghostty-terminal"
                   }
                 ],
-                "description": "Open -a 'iTerm.app'",
+                "description": "Open raycast://script-commands/new-ghostty-terminal",
                 "type": "basic",
                 "from": {
                   "key_code": "t",
