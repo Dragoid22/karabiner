@@ -2343,6 +2343,36 @@
                     }
                   },
                   {
+                    "shell_command": "open -g rectangle://execute-action?name=maximize"
+                  }
+                ],
+                "description": "Window: maximize",
+                "type": "basic",
+                "from": {
+                  "key_code": "return_or_enter",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
                     "shell_command": "open -g rectangle://execute-action?name=top-half"
                   }
                 ],
@@ -2955,13 +2985,13 @@
                     }
                   },
                   {
-                    "shell_command": "open raycast://extensions/raycast/calendar/my-schedule"
+                    "shell_command": "open raycast://extensions/thomas/color-picker/pick-color"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/calendar/my-schedule",
+                "description": "Open raycast://extensions/thomas/color-picker/pick-color",
                 "type": "basic",
                 "from": {
-                  "key_code": "k",
+                  "key_code": "c",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -2985,13 +3015,133 @@
                     }
                   },
                   {
-                    "shell_command": "open raycast://extensions/raycast/system/open-camera"
+                    "shell_command": "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/system/open-camera",
+                "description": "Open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
                 "type": "basic",
                 "from": {
-                  "key_code": "c",
+                  "key_code": "e",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_r",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "shell_command": "open raycast://extensions/raycast/raycast/confetti"
+                  }
+                ],
+                "description": "Open raycast://extensions/raycast/raycast/confetti",
+                "type": "basic",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_r",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "shell_command": "open raycast://extensions/raycast/raycast-ai/ai-chat"
+                  }
+                ],
+                "description": "Open raycast://extensions/raycast/raycast-ai/ai-chat",
+                "type": "basic",
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_r",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "shell_command": "open raycast://extensions/raycast/file-search/search-files"
+                  }
+                ],
+                "description": "Open raycast://extensions/raycast/file-search/search-files",
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_r",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "shell_command": "open raycast://extensions/raycast/calendar/my-schedule"
+                  }
+                ],
+                "description": "Open raycast://extensions/raycast/calendar/my-schedule",
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -3654,6 +3804,66 @@
                     }
                   },
                   {
+                    "shell_command": "open -a 'Arc.app'"
+                  }
+                ],
+                "description": "Open -a 'Arc.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_o",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "shell_command": "open -a 'BusyCal.app'"
+                  }
+                ],
+                "description": "Open -a 'BusyCal.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_o",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
                     "shell_command": "open -a 'Visual Studio Code.app'"
                   }
                 ],
@@ -3684,6 +3894,36 @@
                     }
                   },
                   {
+                    "shell_command": "open -a 'Drafts.app'"
+                  }
+                ],
+                "description": "Open -a 'Drafts.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_o",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
                     "shell_command": "open raycast://extensions/thomas/visual-studio-code/index"
                   }
                 ],
@@ -3691,96 +3931,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "v",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_o",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "shell_command": "(pgrep -f 'Microsoft Edge' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Microsoft%20Edge%22%2C%22type%22%3A%22success%22%7D') && open -a 'Microsoft Edge'"
-                  }
-                ],
-                "description": "Open Microsoft Edge",
-                "type": "basic",
-                "from": {
-                  "key_code": "e",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_o",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "shell_command": "open raycast://script-commands/new-edge-window"
-                  }
-                ],
-                "description": "Open raycast://script-commands/new-edge-window",
-                "type": "basic",
-                "from": {
-                  "key_code": "n",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_o",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "shell_command": "(pgrep -f 'Opera GX' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Opera%20GX%22%2C%22type%22%3A%22success%22%7D') && open -a 'Opera GX'"
-                  }
-                ],
-                "description": "Open Opera GX",
-                "type": "basic",
-                "from": {
-                  "key_code": "g",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -3864,36 +4014,6 @@
                     }
                   },
                   {
-                    "shell_command": "open -a 'zoom.us.app'"
-                  }
-                ],
-                "description": "Open -a 'zoom.us.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "z",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_o",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
                     "shell_command": "open -a 'Finder.app'"
                   }
                 ],
@@ -3924,13 +4044,13 @@
                     }
                   },
                   {
-                    "shell_command": "(pgrep -f 'Messages' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Messages%22%2C%22type%22%3A%22success%22%7D') && open -a 'Messages'"
+                    "shell_command": "open -a 'OmniFocus.app'"
                   }
                 ],
-                "description": "Open Messages",
+                "description": "Open -a 'OmniFocus.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "b",
+                  "key_code": "r",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -3954,13 +4074,13 @@
                     }
                   },
                   {
-                    "shell_command": "(pgrep -f 'Mail' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Mail%22%2C%22type%22%3A%22success%22%7D') && open -a 'Mail'"
+                    "shell_command": "(pgrep -f 'Mimestream' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Mimestream%22%2C%22type%22%3A%22success%22%7D') && open -a 'Mimestream'"
                   }
                 ],
-                "description": "Open Mail",
+                "description": "Open Mimestream",
                 "type": "basic",
                 "from": {
-                  "key_code": "p",
+                  "key_code": "e",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -3984,10 +4104,10 @@
                     }
                   },
                   {
-                    "shell_command": "(pgrep -f 'Mattermost' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Mattermost%22%2C%22type%22%3A%22success%22%7D') && open -a 'Mattermost'"
+                    "shell_command": "open kmtrigger://macro=912BA00A-E521-4543-8667-D246A74EDA63"
                   }
                 ],
-                "description": "Open Mattermost",
+                "description": "Open kmtrigger://macro=912BA00A-E521-4543-8667-D246A74EDA63",
                 "type": "basic",
                 "from": {
                   "key_code": "m",
@@ -4223,7 +4343,7 @@
                   {
                     "set_notification_message": {
                       "id": "sublayer",
-                      "text": "Scripts/System\n\n1 - SkvizBiz VPN\n2 - Close SkvizBiz VPN\n3 - VPN Status\nF - (F)unction keys\nB - (B)uiltin media keys\nM - Toggle (M)enu bar\nP - (P)lay or pause\nD - (D)o not disturb\nO - (O)pen cloudflare tunnel\nC - (C)lost cloudflare tunnel"
+                      "text": "Scripts/System\n\nF - (F)unction keys\nB - (B)uiltin media keys\nM - Toggle (M)enu bar\nP - (P)lay or pause"
                     }
                   },
                   {
@@ -4298,114 +4418,6 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open -g raycast://script-commands/connect-to-skvizbiz-vpn"
-                  }
-                ],
-                "description": "Open -g raycast://script-commands/connect-to-skvizbiz-vpn",
-                "type": "basic",
-                "from": {
-                  "key_code": "1",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "s"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open -g raycast://script-commands/disconnect-skvizbiz-vpn"
-                  }
-                ],
-                "description": "Open -g raycast://script-commands/disconnect-skvizbiz-vpn",
-                "type": "basic",
-                "from": {
-                  "key_code": "2",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "s"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open -g raycast://script-commands/vpn-status-1"
-                  }
-                ],
-                "description": "Open -g raycast://script-commands/vpn-status-1",
-                "type": "basic",
-                "from": {
-                  "key_code": "3",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "s"
                   }
                 ]
               },
@@ -4538,114 +4550,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "p",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "s"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background"
-                  }
-                ],
-                "description": "Open raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background",
-                "type": "basic",
-                "from": {
-                  "key_code": "d",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "s"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open raycast://script-commands/open-cloudflare-tunnel"
-                  }
-                ],
-                "description": "Open raycast://script-commands/open-cloudflare-tunnel",
-                "type": "basic",
-                "from": {
-                  "key_code": "o",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "s"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open raycast://script-commands/close-cloudflare-tunnel"
-                  }
-                ],
-                "description": "Open raycast://script-commands/close-cloudflare-tunnel",
-                "type": "basic",
-                "from": {
-                  "key_code": "c",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -5535,7 +5439,7 @@
                   {
                     "set_notification_message": {
                       "id": "sublayer",
-                      "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nE - Microsoft (E)dge\nR - Zen Browser\nN - (N)ew Edge Window\nG - Opera (G)X\nT - Ghost(t)y\nI - (i)Term\nZ - (Z)oom\nF - (F)inder\nB - (B)eskeder\nP - (P)ost\nM - (M)attermost"
+                      "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nA - (A)rc Browser\nI - (i)Term\nF - (F)inder\nM - (M)imestream"
                     }
                   },
                   {
@@ -5700,157 +5604,13 @@
                     }
                   },
                   {
-                    "shell_command": "(pgrep -f 'Microsoft Edge' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Microsoft%20Edge%22%2C%22type%22%3A%22success%22%7D') && open -a 'Microsoft Edge'"
+                    "shell_command": "(pgrep -f 'Arc' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Arc%22%2C%22type%22%3A%22success%22%7D') && open -a 'Arc'"
                   }
                 ],
-                "description": "Open Microsoft Edge",
+                "description": "Open Arc",
                 "type": "basic",
                 "from": {
-                  "key_code": "e",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "(pgrep -f 'Zen Browser' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Zen%20Browser%22%2C%22type%22%3A%22success%22%7D') && open -a 'Zen Browser'"
-                  }
-                ],
-                "description": "Open Zen Browser",
-                "type": "basic",
-                "from": {
-                  "key_code": "r",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open raycast://script-commands/new-edge-window"
-                  }
-                ],
-                "description": "Open raycast://script-commands/new-edge-window",
-                "type": "basic",
-                "from": {
-                  "key_code": "n",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "(pgrep -f 'Opera GX' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Opera%20GX%22%2C%22type%22%3A%22success%22%7D') && open -a 'Opera GX'"
-                  }
-                ],
-                "description": "Open Opera GX",
-                "type": "basic",
-                "from": {
-                  "key_code": "g",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open raycast://script-commands/new-ghostty-terminal"
-                  }
-                ],
-                "description": "Open raycast://script-commands/new-ghostty-terminal",
-                "type": "basic",
-                "from": {
-                  "key_code": "t",
+                  "key_code": "a",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -5916,42 +5676,6 @@
                     }
                   },
                   {
-                    "shell_command": "open -a 'zoom.us.app'"
-                  }
-                ],
-                "description": "Open -a 'zoom.us.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "z",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
                     "shell_command": "open -a 'Finder.app'"
                   }
                 ],
@@ -5988,82 +5712,10 @@
                     }
                   },
                   {
-                    "shell_command": "(pgrep -f 'Messages' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Messages%22%2C%22type%22%3A%22success%22%7D') && open -a 'Messages'"
+                    "shell_command": "(pgrep -f 'Mimestream' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Mimestream%22%2C%22type%22%3A%22success%22%7D') && open -a 'Mimestream'"
                   }
                 ],
-                "description": "Open Messages",
-                "type": "basic",
-                "from": {
-                  "key_code": "b",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "(pgrep -f 'Mail' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Mail%22%2C%22type%22%3A%22success%22%7D') && open -a 'Mail'"
-                  }
-                ],
-                "description": "Open Mail",
-                "type": "basic",
-                "from": {
-                  "key_code": "p",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "(pgrep -f 'Mattermost' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Mattermost%22%2C%22type%22%3A%22success%22%7D') && open -a 'Mattermost'"
-                  }
-                ],
-                "description": "Open Mattermost",
+                "description": "Open Mimestream",
                 "type": "basic",
                 "from": {
                   "key_code": "m",
@@ -14711,6 +14363,36 @@
                     }
                   },
                   {
+                    "shell_command": "open -g rectangle://execute-action?name=maximize"
+                  }
+                ],
+                "description": "Window: maximize",
+                "type": "basic",
+                "from": {
+                  "key_code": "return_or_enter",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
                     "shell_command": "open -g rectangle://execute-action?name=top-half"
                   }
                 ],
@@ -15323,13 +15005,13 @@
                     }
                   },
                   {
-                    "shell_command": "open raycast://extensions/raycast/calendar/my-schedule"
+                    "shell_command": "open raycast://extensions/thomas/color-picker/pick-color"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/calendar/my-schedule",
+                "description": "Open raycast://extensions/thomas/color-picker/pick-color",
                 "type": "basic",
                 "from": {
-                  "key_code": "k",
+                  "key_code": "c",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -15353,13 +15035,133 @@
                     }
                   },
                   {
-                    "shell_command": "open raycast://extensions/raycast/system/open-camera"
+                    "shell_command": "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/system/open-camera",
+                "description": "Open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
                 "type": "basic",
                 "from": {
-                  "key_code": "c",
+                  "key_code": "e",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_r",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "shell_command": "open raycast://extensions/raycast/raycast/confetti"
+                  }
+                ],
+                "description": "Open raycast://extensions/raycast/raycast/confetti",
+                "type": "basic",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_r",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "shell_command": "open raycast://extensions/raycast/raycast-ai/ai-chat"
+                  }
+                ],
+                "description": "Open raycast://extensions/raycast/raycast-ai/ai-chat",
+                "type": "basic",
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_r",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "shell_command": "open raycast://extensions/raycast/file-search/search-files"
+                  }
+                ],
+                "description": "Open raycast://extensions/raycast/file-search/search-files",
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_r",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "shell_command": "open raycast://extensions/raycast/calendar/my-schedule"
+                  }
+                ],
+                "description": "Open raycast://extensions/raycast/calendar/my-schedule",
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -16022,6 +15824,66 @@
                     }
                   },
                   {
+                    "shell_command": "open -a 'Arc.app'"
+                  }
+                ],
+                "description": "Open -a 'Arc.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_o",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "shell_command": "open -a 'BusyCal.app'"
+                  }
+                ],
+                "description": "Open -a 'BusyCal.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_o",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
                     "shell_command": "open -a 'Visual Studio Code.app'"
                   }
                 ],
@@ -16052,6 +15914,36 @@
                     }
                   },
                   {
+                    "shell_command": "open -a 'Drafts.app'"
+                  }
+                ],
+                "description": "Open -a 'Drafts.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_o",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
                     "shell_command": "open raycast://extensions/thomas/visual-studio-code/index"
                   }
                 ],
@@ -16059,96 +15951,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "v",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_o",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "shell_command": "(pgrep -f 'Microsoft Edge' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Microsoft%20Edge%22%2C%22type%22%3A%22success%22%7D') && open -a 'Microsoft Edge'"
-                  }
-                ],
-                "description": "Open Microsoft Edge",
-                "type": "basic",
-                "from": {
-                  "key_code": "e",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_o",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "shell_command": "open raycast://script-commands/new-edge-window"
-                  }
-                ],
-                "description": "Open raycast://script-commands/new-edge-window",
-                "type": "basic",
-                "from": {
-                  "key_code": "n",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_o",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "shell_command": "(pgrep -f 'Opera GX' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Opera%20GX%22%2C%22type%22%3A%22success%22%7D') && open -a 'Opera GX'"
-                  }
-                ],
-                "description": "Open Opera GX",
-                "type": "basic",
-                "from": {
-                  "key_code": "g",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -16232,36 +16034,6 @@
                     }
                   },
                   {
-                    "shell_command": "open -a 'zoom.us.app'"
-                  }
-                ],
-                "description": "Open -a 'zoom.us.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "z",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_o",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
                     "shell_command": "open -a 'Finder.app'"
                   }
                 ],
@@ -16292,13 +16064,13 @@
                     }
                   },
                   {
-                    "shell_command": "(pgrep -f 'Messages' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Messages%22%2C%22type%22%3A%22success%22%7D') && open -a 'Messages'"
+                    "shell_command": "open -a 'OmniFocus.app'"
                   }
                 ],
-                "description": "Open Messages",
+                "description": "Open -a 'OmniFocus.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "b",
+                  "key_code": "r",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -16322,13 +16094,13 @@
                     }
                   },
                   {
-                    "shell_command": "(pgrep -f 'Mail' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Mail%22%2C%22type%22%3A%22success%22%7D') && open -a 'Mail'"
+                    "shell_command": "(pgrep -f 'Mimestream' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Mimestream%22%2C%22type%22%3A%22success%22%7D') && open -a 'Mimestream'"
                   }
                 ],
-                "description": "Open Mail",
+                "description": "Open Mimestream",
                 "type": "basic",
                 "from": {
-                  "key_code": "p",
+                  "key_code": "e",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -16352,10 +16124,10 @@
                     }
                   },
                   {
-                    "shell_command": "(pgrep -f 'Mattermost' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Mattermost%22%2C%22type%22%3A%22success%22%7D') && open -a 'Mattermost'"
+                    "shell_command": "open kmtrigger://macro=912BA00A-E521-4543-8667-D246A74EDA63"
                   }
                 ],
-                "description": "Open Mattermost",
+                "description": "Open kmtrigger://macro=912BA00A-E521-4543-8667-D246A74EDA63",
                 "type": "basic",
                 "from": {
                   "key_code": "m",
@@ -16591,7 +16363,7 @@
                   {
                     "set_notification_message": {
                       "id": "sublayer",
-                      "text": "Scripts/System\n\n1 - SkvizBiz VPN\n2 - Close SkvizBiz VPN\n3 - VPN Status\nF - (F)unction keys\nB - (B)uiltin media keys\nM - Toggle (M)enu bar\nP - (P)lay or pause\nD - (D)o not disturb\nO - (O)pen cloudflare tunnel\nC - (C)lost cloudflare tunnel"
+                      "text": "Scripts/System\n\nF - (F)unction keys\nB - (B)uiltin media keys\nM - Toggle (M)enu bar\nP - (P)lay or pause"
                     }
                   },
                   {
@@ -16666,114 +16438,6 @@
                     "name": "hyper",
                     "type": "variable_if",
                     "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open -g raycast://script-commands/connect-to-skvizbiz-vpn"
-                  }
-                ],
-                "description": "Open -g raycast://script-commands/connect-to-skvizbiz-vpn",
-                "type": "basic",
-                "from": {
-                  "key_code": "1",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "s"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open -g raycast://script-commands/disconnect-skvizbiz-vpn"
-                  }
-                ],
-                "description": "Open -g raycast://script-commands/disconnect-skvizbiz-vpn",
-                "type": "basic",
-                "from": {
-                  "key_code": "2",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "s"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open -g raycast://script-commands/vpn-status-1"
-                  }
-                ],
-                "description": "Open -g raycast://script-commands/vpn-status-1",
-                "type": "basic",
-                "from": {
-                  "key_code": "3",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "s"
                   }
                 ]
               },
@@ -16906,114 +16570,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "p",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "s"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background"
-                  }
-                ],
-                "description": "Open raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background",
-                "type": "basic",
-                "from": {
-                  "key_code": "d",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "s"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open raycast://script-commands/open-cloudflare-tunnel"
-                  }
-                ],
-                "description": "Open raycast://script-commands/open-cloudflare-tunnel",
-                "type": "basic",
-                "from": {
-                  "key_code": "o",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "s"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open raycast://script-commands/close-cloudflare-tunnel"
-                  }
-                ],
-                "description": "Open raycast://script-commands/close-cloudflare-tunnel",
-                "type": "basic",
-                "from": {
-                  "key_code": "c",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -17903,7 +17459,7 @@
                   {
                     "set_notification_message": {
                       "id": "sublayer",
-                      "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nE - Microsoft (E)dge\nR - Zen Browser\nN - (N)ew Edge Window\nG - Opera (G)X\nT - Ghost(t)y\nI - (i)Term\nZ - (Z)oom\nF - (F)inder\nB - (B)eskeder\nP - (P)ost\nM - (M)attermost"
+                      "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nA - (A)rc Browser\nI - (i)Term\nF - (F)inder\nM - (M)imestream"
                     }
                   },
                   {
@@ -18068,157 +17624,13 @@
                     }
                   },
                   {
-                    "shell_command": "(pgrep -f 'Microsoft Edge' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Microsoft%20Edge%22%2C%22type%22%3A%22success%22%7D') && open -a 'Microsoft Edge'"
+                    "shell_command": "(pgrep -f 'Arc' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Arc%22%2C%22type%22%3A%22success%22%7D') && open -a 'Arc'"
                   }
                 ],
-                "description": "Open Microsoft Edge",
+                "description": "Open Arc",
                 "type": "basic",
                 "from": {
-                  "key_code": "e",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "(pgrep -f 'Zen Browser' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Zen%20Browser%22%2C%22type%22%3A%22success%22%7D') && open -a 'Zen Browser'"
-                  }
-                ],
-                "description": "Open Zen Browser",
-                "type": "basic",
-                "from": {
-                  "key_code": "r",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open raycast://script-commands/new-edge-window"
-                  }
-                ],
-                "description": "Open raycast://script-commands/new-edge-window",
-                "type": "basic",
-                "from": {
-                  "key_code": "n",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "(pgrep -f 'Opera GX' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Opera%20GX%22%2C%22type%22%3A%22success%22%7D') && open -a 'Opera GX'"
-                  }
-                ],
-                "description": "Open Opera GX",
-                "type": "basic",
-                "from": {
-                  "key_code": "g",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "open raycast://script-commands/new-ghostty-terminal"
-                  }
-                ],
-                "description": "Open raycast://script-commands/new-ghostty-terminal",
-                "type": "basic",
-                "from": {
-                  "key_code": "t",
+                  "key_code": "a",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -18284,42 +17696,6 @@
                     }
                   },
                   {
-                    "shell_command": "open -a 'zoom.us.app'"
-                  }
-                ],
-                "description": "Open -a 'zoom.us.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "z",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
                     "shell_command": "open -a 'Finder.app'"
                   }
                 ],
@@ -18356,82 +17732,10 @@
                     }
                   },
                   {
-                    "shell_command": "(pgrep -f 'Messages' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Messages%22%2C%22type%22%3A%22success%22%7D') && open -a 'Messages'"
+                    "shell_command": "(pgrep -f 'Mimestream' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Mimestream%22%2C%22type%22%3A%22success%22%7D') && open -a 'Mimestream'"
                   }
                 ],
-                "description": "Open Messages",
-                "type": "basic",
-                "from": {
-                  "key_code": "b",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "(pgrep -f 'Mail' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Mail%22%2C%22type%22%3A%22success%22%7D') && open -a 'Mail'"
-                  }
-                ],
-                "description": "Open Mail",
-                "type": "basic",
-                "from": {
-                  "key_code": "p",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "name": "sublayer",
-                    "type": "variable_if",
-                    "value": "g"
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "set_notification_message": {
-                      "id": "sublayer",
-                      "text": ""
-                    }
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sublayer",
-                      "value": 0
-                    }
-                  },
-                  {
-                    "shell_command": "(pgrep -f 'Mattermost' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Mattermost%22%2C%22type%22%3A%22success%22%7D') && open -a 'Mattermost'"
-                  }
-                ],
-                "description": "Open Mattermost",
+                "description": "Open Mimestream",
                 "type": "basic",
                 "from": {
                   "key_code": "m",

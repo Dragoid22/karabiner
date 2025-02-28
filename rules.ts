@@ -140,17 +140,17 @@ const rules: KarabinerRules[] = [
     g: stickyLayer("Apps", {
       c: layerHelper("VS (C)ode", app("Visual Studio Code")),
       v: layerHelper("(V)S Code projects", open("raycast://extensions/thomas/visual-studio-code/index")),
-      e: layerHelper("Microsoft (E)dge", app_with_notification("Microsoft Edge")),
-      r: layerHelper("Zen Browser", app_with_notification("Zen Browser")),
-      n: layerHelper("(N)ew Edge Window", open("raycast://script-commands/new-edge-window")),
-      g: layerHelper("Opera (G)X", app_with_notification("Opera GX")),
-      t: layerHelper("Ghost(t)y", open("raycast://script-commands/new-ghostty-terminal")),
+      // e: layerHelper("Microsoft (E)dge", app_with_notification("Microsoft Edge")),
+      a: layerHelper("(A)rc Browser", app_with_notification("Arc")),
+      // n: layerHelper("(N)ew Edge Window", open("raycast://script-commands/new-edge-window")),
+      // g: layerHelper("Opera (G)X", app_with_notification("Opera GX")),
+      // t: layerHelper("Ghost(t)y", open("raycast://script-commands/new-ghostty-terminal")),
       i: layerHelper("(i)Term", app("iTerm")),
-      z: layerHelper("(Z)oom", app("zoom.us")),
+      // z: layerHelper("(Z)oom", app("zoom.us")),
       f: layerHelper("(F)inder", app("Finder")),
-      b: layerHelper("(B)eskeder", app_with_notification("Messages")),
-      p: layerHelper("(P)ost", app_with_notification("Mail")),
-      m: layerHelper("(M)attermost", app_with_notification("Mattermost")),
+      // b: layerHelper("(B)eskeder", app_with_notification("Messages")),
+      // p: layerHelper("(P)ost", app_with_notification("Mail")),
+      m: layerHelper("(M)imestream", app_with_notification("Mimestream")),
     }),
 
     c: open("raycast://extensions/raycast/clipboard-history/clipboard-history"),
@@ -199,6 +199,7 @@ const rules: KarabinerRules[] = [
       j: rectangle('left-half'),
       k: rectangle('maximize'),
       semicolon: rectangle('right-half'),
+      return_or_enter: rectangle('maximize'),
 
       1: rectangle('previous-display'),
 
@@ -209,6 +210,41 @@ const rules: KarabinerRules[] = [
       g: open("-g raycast://extensions/raycast/window-management/top-center-two-thirds"),
     },
 
+    // // w = "Window" via rectangle.app OLD
+    // w: {
+    //   semicolon: {
+    //     description: "Window: Hide",
+    //     to: [
+    //       {
+    //         key_code: "h",
+    //         modifiers: ["right_command"],
+    //       },
+    //     ],
+    //   },
+    //   open_bracket: rectangle("next-display"),
+    //   close_bracket: rectangle("previous-display"),
+    //   return_or_enter: rectangle("maximize"),
+    //   c: rectangle("center"),
+    //   // Halfs 1/2
+    //   up_arrow: rectangle("top-half"),
+    //   down_arrow: rectangle("bottom-half"),
+    //   left_arrow: rectangle("left-half"),
+    //   right_arrow: rectangle("right-half"),
+    //   // Quadrants 1/4
+    //   u: rectangle("top-left"),
+    //   i: rectangle("top-right"),
+    //   j: rectangle("bottom-left"),
+    //   k: rectangle("bottom-right"),
+    //   // Thirds 1/3
+    //   d: rectangle("first-third"),
+    //   f: rectangle("center-third"),
+    //   g: rectangle("last-third"),
+    //   // Two Thirds 2/3
+    //   e: rectangle("first-two-thirds"),
+    //   t: rectangle("last-two-thirds"),
+    // },
+
+    // TODO : Return to Rectangle instead of raycast
     e: {
       u: open("-g raycast://extensions/raycast/window-management/center && open -g raycast://extensions/raycast/window-management/move-left"),
       i: open("-g raycast://extensions/raycast/window-management/center && open -g raycast://extensions/raycast/window-management/move-up"),
@@ -222,20 +258,17 @@ const rules: KarabinerRules[] = [
 
     // o = "Open" applications
     o: {
+      a: app("Arc"),
+      b: app("BusyCal"),
       c: app("Visual Studio Code"),
+      d: app("Drafts"),
       v: open("raycast://extensions/thomas/visual-studio-code/index"),
-      e: app_with_notification("Microsoft Edge"),
-	  // n = "N"ew edge window
-      n: open("raycast://script-commands/new-edge-window"),
-      g: app_with_notification("Opera GX"),
       t: app("iTerm"),
       i: app("iTerm"),
-      z: app("zoom.us"),
       f: app("Finder"),
-      // b = "Beskeder"
-      b: app_with_notification("Messages"),
-      p: app_with_notification("Mail"),
-      m: app_with_notification("Mattermost"),
+      r: app("OmniFocus"),
+      e: app_with_notification("Mimestream"),
+      m: open("kmtrigger://macro=912BA00A-E521-4543-8667-D246A74EDA63"),
     },
 
     // f1: app("Mail"),
@@ -253,15 +286,13 @@ const rules: KarabinerRules[] = [
   	  m: layerHelper("Toggle (M)enu bar", open("-g raycast://extensions/iamyeizi/toggle-menu-bar/toggle")),
       p: layerHelper("(P)lay or pause", basicRemap("play_or_pause")),
       //   // "D"o not disturb toggle
-      d: layerHelper("(D)o not disturb", open(
-        `raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`
-      )),
+      // d: layerHelper("(D)o not disturb", open(`raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`)),
 
-	  o: layerHelper("(O)pen cloudflare tunnel", open("raycast://script-commands/open-cloudflare-tunnel")),
-	  c: layerHelper("(C)lost cloudflare tunnel", open("raycast://script-commands/close-cloudflare-tunnel")),
-	  1: layerHelper("SkvizBiz VPN", open("-g raycast://script-commands/connect-to-skvizbiz-vpn")),
-	  2: layerHelper("Close SkvizBiz VPN", open("-g raycast://script-commands/disconnect-skvizbiz-vpn")),
-	  3: layerHelper("VPN Status", open("-g raycast://script-commands/vpn-status-1")),
+	  // o: layerHelper("(O)pen cloudflare tunnel", open("raycast://script-commands/open-cloudflare-tunnel")),
+	  // c: layerHelper("(C)lost cloudflare tunnel", open("raycast://script-commands/close-cloudflare-tunnel")),
+	  // 1: layerHelper("SkvizBiz VPN", open("-g raycast://script-commands/connect-to-skvizbiz-vpn")),
+	  // 2: layerHelper("Close SkvizBiz VPN", open("-g raycast://script-commands/disconnect-skvizbiz-vpn")),
+	  // 3: layerHelper("VPN Status", open("-g raycast://script-commands/vpn-status-1")),
     }),
 
     // // c = Musi*c* which isn't "m" because we want it to be on the left hand
@@ -279,30 +310,20 @@ const rules: KarabinerRules[] = [
 
     // r = "Raycast"
     r: {
-      //   c: open("raycast://extensions/thomas/color-picker/pick-color"),
+      c: open("raycast://extensions/thomas/color-picker/pick-color"),
       //   n: open("raycast://script-commands/dismiss-notifications"),
-      //   l: open(
-      //     "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
-      //   ),
-      //   e: open(
-      //     "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
-      //   ),
-      //   p: open("raycast://extensions/raycast/raycast/confetti"),
-      //   a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
+      e: open("raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"),
+      p: open("raycast://extensions/raycast/raycast/confetti"),
+      a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
+      f: open("raycast://extensions/raycast/file-search/search-files"),
       //   s: open("raycast://extensions/peduarte/silent-mention/index"),
-      //   h: open(
-      //     "raycast://extensions/raycast/clipboard-history/clipboard-history"
-      //   ),
-      //   1: open(
-      //     "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
-      //   ),
-      //   2: open(
-      //     "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
-      //   ),
+      //   h: open("raycast://extensions/raycast/clipboard-history/clipboard-history"),
+      // 1: open("raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"),
+      //   2: open("raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"),
       // s: open("raycast://extensions/mattisssa/spotify-player/nowPlayingMenuBar"),
       // K for kalender
       k: open("raycast://extensions/raycast/calendar/my-schedule"),
-      c: open("raycast://extensions/raycast/system/open-camera"),
+      // c: open("raycast://extensions/raycast/system/open-camera"),
       n: open("-g raycast://extensions/raycast/raycast-notes/raycast-notes"),
     //   m: open("-g raycast://extensions/raycast/floating-notes/toggle-floating-notes-focus"),
 	},
@@ -315,17 +336,17 @@ const rules: KarabinerRules[] = [
 	  // e = End stopwatch
       spacebar: open("-g raycast://script-commands/stop-stopur"),
     },
-    q: {
-      j: basicRemap("1", ["left_control"]),
-      k: basicRemap("2", ["left_control"]),
-      l: basicRemap("3", ["left_control"]),
-      semicolon: basicRemap("4", ["left_control"]),
-      u: basicRemap("5", ["left_control"]),
-      i: basicRemap("6", ["left_control"]),
-      o: basicRemap("7", ["left_control"]),
-      m: basicRemap("5", ["left_control"]),
-      comma: basicRemap("6", ["left_control"]),
-      period: basicRemap("7", ["left_control"]),
+  q: {
+    j: basicRemap("1", ["left_control"]),
+    k: basicRemap("2", ["left_control"]),
+    l: basicRemap("3", ["left_control"]),
+    semicolon: basicRemap("4", ["left_control"]),
+    u: basicRemap("5", ["left_control"]),
+    i: basicRemap("6", ["left_control"]),
+    o: basicRemap("7", ["left_control"]),
+    m: basicRemap("5", ["left_control"]),
+    comma: basicRemap("6", ["left_control"]),
+    period: basicRemap("7", ["left_control"]),
     },
     non_us_pound: {
       
