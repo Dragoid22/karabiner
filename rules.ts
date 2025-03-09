@@ -58,59 +58,59 @@ const rules: KarabinerRules[] = [
       },
     ],
   },
-  {
-    "description": "Alt+tick finishes backtick",
-    "manipulators": [
-      {
-        "from": {
-          "key_code": "equal_sign",
-          "modifiers": {
-            "mandatory": [
-              "left_alt"
-            ]
-          }
-        },
-        "to": [
-          {
-            "key_code": "equal_sign",
-            "modifiers": [
-              "left_shift"
-            ],
-            "repeat": true
-          },
-          {
-            "key_code": "spacebar",
-            "repeat": true
-          }
-        ],
-        "type": "basic"
-      },
-      {
-        "from": {
-          "key_code": "equal_sign",
-          "modifiers": {
-            "mandatory": [
-              "right_alt"
-            ]
-          }
-        },
-        "to": [
-          {
-            "key_code": "equal_sign",
-            "modifiers": [
-              "left_shift"
-            ],
-            "repeat": true
-          },
-          {
-            "key_code": "spacebar",
-            "repeat": true
-          }
-        ],
-        "type": "basic"
-      }
-    ]
-  },
+  // {
+  //   "description": "Alt+tick finishes backtick",
+  //   "manipulators": [
+  //     {
+  //       "from": {
+  //         "key_code": "equal_sign",
+  //         "modifiers": {
+  //           "mandatory": [
+  //             "left_alt"
+  //           ]
+  //         }
+  //       },
+  //       "to": [
+  //         {
+  //           "key_code": "equal_sign",
+  //           "modifiers": [
+  //             "left_shift"
+  //           ],
+  //           "repeat": true
+  //         },
+  //         {
+  //           "key_code": "spacebar",
+  //           "repeat": true
+  //         }
+  //       ],
+  //       "type": "basic"
+  //     },
+  //     {
+  //       "from": {
+  //         "key_code": "equal_sign",
+  //         "modifiers": {
+  //           "mandatory": [
+  //             "right_alt"
+  //           ]
+  //         }
+  //       },
+  //       "to": [
+  //         {
+  //           "key_code": "equal_sign",
+  //           "modifiers": [
+  //             "left_shift"
+  //           ],
+  //           "repeat": true
+  //         },
+  //         {
+  //           "key_code": "spacebar",
+  //           "repeat": true
+  //         }
+  //       ],
+  //       "type": "basic"
+  //     }
+  //   ]
+  // },
   ...generateAllHyperSubLayers({
     // Ensures that keys without a sublayer trigger a "regular" hyper key-combination
     ...fallbacks,
@@ -177,7 +177,7 @@ const rules: KarabinerRules[] = [
       y: basicRemap("period"),
       n: basicRemap("period"),
     },
-
+    // TODO: Remap to old window bindings
     // All window-commands
     w: {
       u: rectangle('bottom-left'),
@@ -447,7 +447,7 @@ const basic_params = {
     }
   ],
   "virtual_hid_keyboard": {
-	"keyboard_type_v2": "iso",
+	"keyboard_type_v2": "ansi",
     "indicate_sticky_modifier_keys_state": true,
     "mouse_key_xy_scale": 100
   }
