@@ -423,28 +423,28 @@ const basic_params = {
     "delay_milliseconds_before_open_device": 1000
   },
   "simple_modifications": [
-    {
-      "from": {
-        "key_code": "f13"
-      },
-      "to": [
-        {
-          "consumer_key_code": "dictation"
-        }
-      ]
-    },
-    {
-      "from": {
-        "key_code": "f16"
-      },
-      "to": [
-        {
-          "software_function": {
-            "iokit_power_management_sleep_system": {}
-          }
-        }
-      ]
-    }
+    // {
+    //   "from": {
+    //     "key_code": "f13"
+    //   },
+    //   "to": [
+    //     {
+    //       "consumer_key_code": "dictation"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "from": {
+    //     "key_code": "f16"
+    //   },
+    //   "to": [
+    //     {
+    //       "software_function": {
+    //         "iokit_power_management_sleep_system": {}
+    //       }
+    //     }
+    //   ]
+    // }
   ],
   "virtual_hid_keyboard": {
 	"keyboard_type_v2": "ansi",
