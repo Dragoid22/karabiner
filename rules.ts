@@ -58,64 +58,63 @@ const rules: KarabinerRules[] = [
       },
     ],
   },
-  // {
-  //   "description": "Alt+tick finishes backtick",
-  //   "manipulators": [
-  //     {
-  //       "from": {
-  //         "key_code": "equal_sign",
-  //         "modifiers": {
-  //           "mandatory": [
-  //             "left_alt"
-  //           ]
-  //         }
-  //       },
-  //       "to": [
-  //         {
-  //           "key_code": "equal_sign",
-  //           "modifiers": [
-  //             "left_shift"
-  //           ],
-  //           "repeat": true
-  //         },
-  //         {
-  //           "key_code": "spacebar",
-  //           "repeat": true
-  //         }
-  //       ],
-  //       "type": "basic"
-  //     },
-  //     {
-  //       "from": {
-  //         "key_code": "equal_sign",
-  //         "modifiers": {
-  //           "mandatory": [
-  //             "right_alt"
-  //           ]
-  //         }
-  //       },
-  //       "to": [
-  //         {
-  //           "key_code": "equal_sign",
-  //           "modifiers": [
-  //             "left_shift"
-  //           ],
-  //           "repeat": true
-  //         },
-  //         {
-  //           "key_code": "spacebar",
-  //           "repeat": true
-  //         }
-  //       ],
-  //       "type": "basic"
-  //     }
-  //   ]
-  // },
+  {
+    "description": "Alt+tick finishes backtick",
+    "manipulators": [
+      {
+        "from": {
+          "key_code": "equal_sign",
+          "modifiers": {
+            "mandatory": [
+              "left_alt"
+            ]
+          }
+        },
+        "to": [
+          {
+            "key_code": "equal_sign",
+            "modifiers": [
+              "left_shift"
+            ],
+            "repeat": true
+          },
+          {
+            "key_code": "spacebar",
+            "repeat": true
+          }
+        ],
+        "type": "basic"
+      },
+      {
+        "from": {
+          "key_code": "equal_sign",
+          "modifiers": {
+            "mandatory": [
+              "right_alt"
+            ]
+          }
+        },
+        "to": [
+          {
+            "key_code": "equal_sign",
+            "modifiers": [
+              "left_shift"
+            ],
+            "repeat": true
+          },
+          {
+            "key_code": "spacebar",
+            "repeat": true
+          }
+        ],
+        "type": "basic"
+      },
+    ]
+  },
+  
   ...generateAllHyperSubLayers({
     // Ensures that keys without a sublayer trigger a "regular" hyper key-combination
     ...fallbacks,
-
-    
 
     page_up: switch_karabiner_profile(name_of_default_fn, "Fn keys"),
     page_down: switch_karabiner_profile(name_of_builtin_fn, "Media keys"),
@@ -199,50 +198,42 @@ const rules: KarabinerRules[] = [
       j: rectangle('left-half'),
       k: rectangle('maximize'),
       semicolon: rectangle('right-half'),
+      // semicolon: {
+      //   description: "Window: Hide",
+      //   to: [
+      //     {
+      //       key_code: "h",
+      //       modifiers: ["right_command"],
+      //     },
+      //   ],
+      // },
       return_or_enter: rectangle('maximize'),
 
       1: rectangle('previous-display'),
-
+      // open_bracket: rectangle("next-display"),
+      // close_bracket: rectangle("previous-display"),
       e: rectangle("top-half"),
       d: rectangle("bottom-half"),
       f: rectangle("center-half"),
       t: rectangle("move-up"),
       g: open("-g raycast://extensions/raycast/window-management/top-center-two-thirds"),
+      // // Halfs 1/2
+      // up_arrow: rectangle("top-half"),
+      // down_arrow: rectangle("bottom-half"),
+      // left_arrow: rectangle("left-half"),
+      // right_arrow: rectangle("right-half"),
+      //   // Quadrants 1/4
+      //   u: rectangle("top-left"),
+      //   i: rectangle("top-right"),
+      //   j: rectangle("bottom-left"),
+      //   k: rectangle("bottom-right"),
+      //   d: rectangle("first-third"),
+      //   f: rectangle("center-third"),
+      //   g: rectangle("last-third"),
+      //   // Two Thirds 2/3
+      //   e: rectangle("first-two-thirds"),
+      //   t: rectangle("last-two-thirds"),
     },
-
-    // // w = "Window" via rectangle.app OLD
-    // w: {
-    //   semicolon: {
-    //     description: "Window: Hide",
-    //     to: [
-    //       {
-    //         key_code: "h",
-    //         modifiers: ["right_command"],
-    //       },
-    //     ],
-    //   },
-    //   open_bracket: rectangle("next-display"),
-    //   close_bracket: rectangle("previous-display"),
-    //   return_or_enter: rectangle("maximize"),
-    //   c: rectangle("center"),
-    //   // Halfs 1/2
-    //   up_arrow: rectangle("top-half"),
-    //   down_arrow: rectangle("bottom-half"),
-    //   left_arrow: rectangle("left-half"),
-    //   right_arrow: rectangle("right-half"),
-    //   // Quadrants 1/4
-    //   u: rectangle("top-left"),
-    //   i: rectangle("top-right"),
-    //   j: rectangle("bottom-left"),
-    //   k: rectangle("bottom-right"),
-    //   // Thirds 1/3
-    //   d: rectangle("first-third"),
-    //   f: rectangle("center-third"),
-    //   g: rectangle("last-third"),
-    //   // Two Thirds 2/3
-    //   e: rectangle("first-two-thirds"),
-    //   t: rectangle("last-two-thirds"),
-    // },
 
     // TODO : Return to Rectangle instead of raycast
     e: {
@@ -326,27 +317,29 @@ const rules: KarabinerRules[] = [
       // c: open("raycast://extensions/raycast/system/open-camera"),
       n: open("-g raycast://extensions/raycast/raycast-notes/raycast-notes"),
     //   m: open("-g raycast://extensions/raycast/floating-notes/toggle-floating-notes-focus"),
-	},
-	// u = Ur
-	u: {
-	  // r = "R"estart stopwatch
-	  r: open("-g raycast://script-commands/genstart-stopur"),
-	  // s = Start stopwatch
-      s: open("-g raycast://script-commands/start-stopur"),
-	  // e = End stopwatch
-      spacebar: open("-g raycast://script-commands/stop-stopur"),
-    },
-  q: {
-    j: basicRemap("1", ["left_control"]),
-    k: basicRemap("2", ["left_control"]),
-    l: basicRemap("3", ["left_control"]),
-    semicolon: basicRemap("4", ["left_control"]),
-    u: basicRemap("5", ["left_control"]),
-    i: basicRemap("6", ["left_control"]),
-    o: basicRemap("7", ["left_control"]),
-    m: basicRemap("5", ["left_control"]),
-    comma: basicRemap("6", ["left_control"]),
-    period: basicRemap("7", ["left_control"]),
+	  },  
+	// // u = Ur
+	// u: {
+	//   // r = "R"estart stopwatch
+	//   r: open("-g raycast://script-commands/genstart-stopur"),
+	//   // s = Start stopwatch
+  //     s: open("-g raycast://script-commands/start-stopur"),
+	//   // e = End stopwatch
+  //     spacebar: open("-g raycast://script-commands/stop-stopur"),
+  //   },
+
+  //* Display Swaitcher
+    q: {
+      j: basicRemap("1", ["left_control"]),
+      k: basicRemap("2", ["left_control"]),
+      l: basicRemap("3", ["left_control"]),
+      semicolon: basicRemap("4", ["left_control"]),
+      u: basicRemap("5", ["left_control"]),
+      i: basicRemap("6", ["left_control"]),
+      o: basicRemap("7", ["left_control"]),
+      m: basicRemap("5", ["left_control"]),
+      comma: basicRemap("6", ["left_control"]),
+      period: basicRemap("7", ["left_control"]),
     },
     non_us_pound: {
       
@@ -402,7 +395,7 @@ const rules: KarabinerRules[] = [
         // 	repeat: false,
         // }
       ],
-    }
+    },
   }),
 ];
 
