@@ -153,7 +153,7 @@ const rules: KarabinerRules[] = [
     }),
 
     c: open("raycast://extensions/raycast/clipboard-history/clipboard-history"),
-
+    v: open("raycast://extensions/raycast/snippets/search-snippets"),
     // D = digits. Numeric keys for right hand, moved down a notch from the numeric row for easier reach.
     d: {
       u: basicRemap("7"),
