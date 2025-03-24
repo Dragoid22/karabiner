@@ -217,11 +217,11 @@ const rules: KarabinerRules[] = [
       f: rectangle("center-half"),
       t: rectangle("move-up"),
       g: open("-g raycast://extensions/raycast/window-management/top-center-two-thirds"),
-      // // Halfs 1/2
-      // up_arrow: rectangle("top-half"),
-      // down_arrow: rectangle("bottom-half"),
-      // left_arrow: rectangle("left-half"),
-      // right_arrow: rectangle("right-half"),
+      // Halfs 1/2
+      up_arrow: rectangle("top-half"),
+      down_arrow: rectangle("bottom-half"),
+      left_arrow: rectangle("left-half"),
+      right_arrow: rectangle("right-half"),
       //   // Quadrants 1/4
       //   u: rectangle("top-left"),
       //   i: rectangle("top-right"),
@@ -328,7 +328,7 @@ const rules: KarabinerRules[] = [
   //     spacebar: open("-g raycast://script-commands/stop-stopur"),
   //   },
 
-  //* Display Swaitcher
+  //* Display Switcher
     q: {
       j: basicRemap("1", ["left_control"]),
       k: basicRemap("2", ["left_control"]),
