@@ -405,9 +405,7 @@ const basic_params = {
 	{
 		"identifiers": {
 			"is_keyboard": true,
-			"is_pointing_device": true,
-			"product_id": 291,
-			"vendor_id": 13364
+			"is_pointing_device": true
 		},
 		"ignore": false
 	}
