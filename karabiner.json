@@ -12010,7 +12010,7 @@
       },
       "simple_modifications": [],
       "virtual_hid_keyboard": {
-        "keyboard_type_v2": "iso",
+        "keyboard_type_v2": "ansi",
         "indicate_sticky_modifier_keys_state": true,
         "mouse_key_xy_scale": 100
       }
@@ -24018,7 +24018,7 @@
       },
       "simple_modifications": [],
       "virtual_hid_keyboard": {
-        "keyboard_type_v2": "iso",
+        "keyboard_type_v2": "ansi",
         "indicate_sticky_modifier_keys_state": true,
         "mouse_key_xy_scale": 100
       }

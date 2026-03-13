@@ -328,7 +328,7 @@ const rules: KarabinerRules[] = [
   //     spacebar: open("-g raycast://script-commands/stop-stopur"),
   //   },
 
-  //* Display Switcher
+  //* Display/Desktop Switcher
     q: {
       j: basicRemap("1", ["left_control"]),
       k: basicRemap("2", ["left_control"]),
@@ -438,7 +438,7 @@ const basic_params = {
     // }
   ],
   "virtual_hid_keyboard": {
-	"keyboard_type_v2": "iso",
+	"keyboard_type_v2": "ansi",
     "indicate_sticky_modifier_keys_state": true,
     "mouse_key_xy_scale": 100
   }
