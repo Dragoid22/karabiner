@@ -131,10 +131,7 @@ const rules: KarabinerRules[] = [
     quote: basicRemap("delete_forward", []),
 
     // a = "A"udio/video
-    // a: {
-    //   // s = Stop everything
-    //   s: open("-g raycast://script-commands/mute-and-cut-video"),
-    // },
+    a: basicRemap("a", ["left_control"]),
 
     g: stickyLayer("Apps", {
       c: layerHelper("VS (C)ode", app("Visual Studio Code")),
