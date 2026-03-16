@@ -405,7 +405,16 @@ const basic_params = {
 			"is_pointing_device": true
 		},
 		"ignore": false
-	}
+	},
+  {
+    "identifiers": {
+        "is_keyboard": true,
+        "is_pointing_device": true,
+        "product_id": 18,
+        "vendor_id": 13807
+    },
+    "ignore": false
+  }
   ],
   "parameters": {
     "delay_milliseconds_before_open_device": 1000
