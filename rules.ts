@@ -140,7 +140,7 @@ const rules: KarabinerRules[] = [
       a: layerHelper("(A)rc Browser", app_with_notification("Arc")),
       // n: layerHelper("(N)ew Edge Window", open("raycast://script-commands/new-edge-window")),
       // g: layerHelper("Opera (G)X", app_with_notification("Opera GX")),
-      // t: layerHelper("Ghost(t)y", open("raycast://script-commands/new-ghostty-terminal")),
+      t: layerHelper("Ghost(t)y", app_with_notification("Ghostty")),
       i: layerHelper("(i)Term", app("iTerm")),
       // z: layerHelper("(Z)oom", app("zoom.us")),
       f: layerHelper("(F)inder", app("Finder")),

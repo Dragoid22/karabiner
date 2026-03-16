@@ -5454,7 +5454,7 @@
                   {
                     "set_notification_message": {
                       "id": "sublayer",
-                      "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nA - (A)rc Browser\nI - (i)Term\nF - (F)inder\nM - (M)imestream"
+                      "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nA - (A)rc Browser\nT - Ghost(t)y\nI - (i)Term\nF - (F)inder\nM - (M)imestream"
                     }
                   },
                   {
@@ -5626,6 +5626,42 @@
                 "type": "basic",
                 "from": {
                   "key_code": "a",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "g"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "shell_command": "(pgrep -f 'Ghostty' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Ghostty%22%2C%22type%22%3A%22success%22%7D') && open -a 'Ghostty'"
+                  }
+                ],
+                "description": "Open Ghostty",
+                "type": "basic",
+                "from": {
+                  "key_code": "t",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -12000,6 +12036,14 @@
             "is_pointing_device": true
           },
           "ignore": false
+        },
+        {
+          "identifiers": {
+            "vendor_id": 13807,
+            "is_keyboard": true,
+            "is_pointing_device": true
+          },
+          "ignore": false
         }
       ],
       "parameters": {
@@ -17459,7 +17503,7 @@
                   {
                     "set_notification_message": {
                       "id": "sublayer",
-                      "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nA - (A)rc Browser\nI - (i)Term\nF - (F)inder\nM - (M)imestream"
+                      "text": "Apps\n\nC - VS (C)ode\nV - (V)S Code projects\nA - (A)rc Browser\nT - Ghost(t)y\nI - (i)Term\nF - (F)inder\nM - (M)imestream"
                     }
                   },
                   {
@@ -17631,6 +17675,42 @@
                 "type": "basic",
                 "from": {
                   "key_code": "a",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "name": "sublayer",
+                    "type": "variable_if",
+                    "value": "g"
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "set_notification_message": {
+                      "id": "sublayer",
+                      "text": ""
+                    }
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sublayer",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "shell_command": "(pgrep -f 'Ghostty' > /dev/null || open -g 'raycast://extensions/maxnyby/raycast-notification/index?launchType=background&arguments=%7B%22title%22%3A%22Opening%20Ghostty%22%2C%22type%22%3A%22success%22%7D') && open -a 'Ghostty'"
+                  }
+                ],
+                "description": "Open Ghostty",
+                "type": "basic",
+                "from": {
+                  "key_code": "t",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -24001,6 +24081,14 @@
       "devices": [
         {
           "identifiers": {
+            "is_keyboard": true,
+            "is_pointing_device": true
+          },
+          "ignore": false
+        },
+        {
+          "identifiers": {
+            "vendor_id": 13807,
             "is_keyboard": true,
             "is_pointing_device": true
           },
